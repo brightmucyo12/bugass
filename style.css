@@ -1,0 +1,254 @@
+/* Import Inter for bold, modern Figma typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER --- */
+.navbar {
+  background-color: #0B280B; /* Exact dark forest green */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+.logo {
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 42px;
+  height: 6px;
+  background-color: #FFFFFF;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #000000;
+  margin-bottom: 25px;
+  line-height: 1.15;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #0A6B63; /* Teal accent button */
+  color: #FFFFFF;
+  padding: 18px 42px;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-radius: 0px;
+}
+
+/* --- MAIN SECTION (WHAT WE DO + PRICING) --- */
+.main-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  max-width: 1280px;
+  margin: 30px auto 80px;
+  padding: 0 40px;
+  align-items: start;
+}
+
+/* What We Do */
+.what-we-do-col h2 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.what-we-do-col p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000000;
+}
+
+/* Pricing Header & Container */
+.pricing-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #EFECEF; /* Outer background matching Figma frame */
+}
+
+/* --- PRICING CARDS --- */
+.plan-card {
+  padding: 30px 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.plan-card h3 {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.features li {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #000000;
+  margin-bottom: 14px;
+}
+
+/* Individual Fills */
+.trial-card {
+  background-color: #F8F9FA;
+}
+
+.weekly-card {
+  background-color: #D3C1C1;
+}
+
+.monthly-card {
+  background-color: #EFECEF;
+}
+
+/* Buttons inside cards */
+.action-btn {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 12px 10px;
+  text-decoration: none;
+  border-radius: 0px;
+  margin-top: auto;
+}
+
+.text-btn {
+  color: #8B0000;
+  background: transparent;
+  font-size: 12px;
+}
+
+.green-btn {
+  background-color: #82DF1D; /* Lime Green button */
+  color: #000000;
+  letter-spacing: 0.2px;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: #1E2B3A; /* Dark navy background */
+  color: #FFFFFF;
+  padding: 35px 40px 15px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  display: flex;
+  gap: 120px;
+  margin-bottom: 25px;
+}
+
+.brand-col h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.brand-col p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.links-col h4 {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.links-col ul {
+  list-style: none;
+}
+
+.links-col li {
+  margin-bottom: 4px;
+}
+
+.links-col a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding-top: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

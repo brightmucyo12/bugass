@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINDbank Rwanda - Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo</title>
+  
+  <!-- Import Inter Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Exact Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Soft Pastel Gradient Background */
+    html {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+      min-height: 100%;
+    }
+
+    body {
+      /* Soft Translucent Light Blue Backdrop */
+      background-color: rgba(239, 246, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #0f172a;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* --- HEADER --- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 40px;
+      background-color: rgba(255, 255, 255, 0.65);
+      border-bottom: 1px solid rgba(147, 197, 253, 0.5);
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      position: relative;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Dropdown Language Menu */
+    .lang-dropdown-wrapper {
+      position: relative;
+    }
+
+    .lang-select {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(147, 197, 253, 0.8);
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-select:hover {
+      background: #ffffff;
+      border-color: #3b82f6;
+    }
+
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: 105%;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 150px;
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .lang-menu.show {
+      display: block;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .lang-option:hover {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .lang-option.active {
+      font-weight: 800;
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+
+    .sign-in {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0f172a;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid #006400;
+      color: #006400;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      border-radius: 4px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #006400;
+      color: #FFFFFF;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #006400;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s;
+      border-radius: 4px;
+    }
+
+    .btn-primary:hover {
+      background-color: #004d00;
+    }
+
+    /* --- HERO BANNER --- */
+    .hero-banner {
+      background-color: rgba(15, 23, 42, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      height: 220px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 30px;
+    }
+
+    .hero-banner h1 {
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* --- MAIN CONTAINER --- */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 35px 40px 60px;
+    }
+
+    /* --- BENEFITS --- */
+    .benefits-section {
+      margin-bottom: 35px;
+    }
+
+    .benefits-intro {
+      font-size: 15px;
+      font-weight: 600;
+      font-style: italic;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .benefits-list {
+      list-style-type: disc;
+      font-size: 15px;
+      font-weight: 500;
+      font-style: italic;
+      color: #1e293b;
+      margin-bottom: 25px;
+      padding-left: 24px;
+    }
+
+    .benefits-list li {
+      margin-bottom: 4px;
+    }
+
+    .explore-link {
+      display: inline-block;
+      color: #991b1b;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    /* --- ACCESS PLANS SECTION --- */
+    .plan-row {
+      display: flex;
+      margin-top: 35px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .plan-label {
+      width: 250px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      flex-shrink: 0;
+    }
+
+    .plan-label.italic {
+      font-style: italic;
+    }
+
+    .plan-details {
+      flex-grow: 1;
+    }
+
+    .plan-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .plan-text.italic {
+      font-style: italic;
+    }
+
+    .green-action-btn {
+      display: inline-block;
+      background-color: #006400;
+      color: #FFFFFF;
+      padding: 12px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      font-style: italic;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.2s;
+      border-radius: 4px;
+    }
+
+    .green-action-btn:hover {
+      background-color: #004d00;
+    }
+
+    /* Paid Plans Grid */
+    .paid-plans-wrapper {
+      display: flex;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .paid-plan-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .renew-tag {
+      font-size: 13px;
+      font-weight: 800;
+      font-style: italic;
+      color: #0f172a;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    /* --- FAQ SECTION --- */
+    .faq-section {
+      margin-top: 60px;
+    }
+
+    .faq-title {
+      font-size: 16px;
+      font-weight: 800;
+      font-style: italic;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .faq-details {
+      font-size: 15px;
+      font-weight: 600;
+      font-style: italic;
+      color: #1e293b;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .faq-details summary {
+      list-style: none;
+    }
+
+    .faq-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-details summary::before {
+      content: "+ ";
+      font-weight: 800;
+      font-style: normal;
+      margin-right: 4px;
+    }
+
+    .faq-answer {
+      font-style: normal;
+      font-size: 14px;
+      margin-top: 6px;
+      padding-left: 18px;
+      color: #334155;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background-color: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      padding: 40px 50px 20px;
+      width: 100%;
+    }
+
+    .footer-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-col h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .brand-col p {
+      font-size: 12px;
+      font-weight: 400;
+      color: #94a3b8;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="brand-name">MINDbank Rwanda</div>
+    <div class="header-right">
+      <!-- Language Selection Dropdown -->
+      <div class="lang-dropdown-wrapper">
+        <button class="lang-select" id="langSelectBtn" aria-label="Select Language">
+          <span>🌐</span>
+          <span id="currentLangLabel">RW</span>
+          <small>▼</small>
+        </button>
+        <div class="lang-menu" id="langMenu">
+          <div class="lang-option active" data-lang="rw">
+            <span>🇷🇼</span> Kinyarwanda
+          </div>
+          <div class="lang-option" data-lang="en">
+            <span>🇬🇧</span> English
+          </div>
+        </div>
+      </div>
+
+      <a href="login.html" class="sign-in">
+        <span>👤</span>
+        <span data-i18n="signIn">Injira</span>
+      </a>
+      <a href="register.html" class="btn-secondary" data-i18n="register">IYYANDIKISHE</a>
+      <a href="freetierdashboard.html" class="btn-primary" data-i18n="tryFree">IGERAGEZE KU BUNTU</a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <h1 data-i18n="heroTitle">Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo</h1>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Benefits / What We Do -->
+    <section class="benefits-section">
+      <p class="benefits-intro" data-i18n="benefitsIntro">Hamwe n'ibibazo birenga 300+ n'ibisubizo byabyo, Mind bank igufasha kurongora ubumenyi bwawe:</p>
+      <ul class="benefits-list">
+        <li data-i18n="b1">Ibibazo 20 kuri buri kizamini hamwe n'uburyo bwo kubarira amanota bikwereka ibyo wagize ukiyirangiza</li>
+        <li data-i18n="b2">Ibizamini by'imyitozo biguha ibisubizo by'ukuri nyuma yo kubikora</li>
+        <li data-i18n="b3">Uburyo bworoshye bwo gukoresha no kwishyura igiciro cyoroheye buri wese</li>
+        <li data-i18n="b4">Ububiko bw'ibibazo buherekejwe n'ibibazo 300 n'ibisubizo byabyo</li>
+      </ul>
+      <a href="#" class="explore-link" data-i18n="exploreLink">Shakisha mu ibyiciro byose</a>
+    </section>
+
+    <!-- Free Trial Plan Row -->
+    <section class="plan-row">
+      <div class="plan-label" data-i18n="trialTitle">Tanga igihe cyawe cyo kugerageza ku buntu uyu munsi</div>
+      <div class="plan-details">
+        <div class="plan-text" data-i18n="trialDetails">
+          Kuba wagera mu bubiko bw'ibibazo birenga 300+ n'ibisubizo byabyo<br>
+          Ikizamini 1 cy'imyitozo ku buntu<br>
+          Kuba wagera ku byapa byo mu muhanda, amategeko y'umuhanda n'ibindi byinshi
+        </div>
+        <a href="freetierdashboard.html" class="green-action-btn" data-i18n="startTrialBtn">Tangira kugerageza ku buntu</a>
+      </div>
+    </section>
+
+    <!-- Premium Access Plan Row -->
+    <section class="plan-row">
+      <div class="plan-label italic" data-i18n="premiumTitle">Rwandikisha Premium</div>
+      <div class="plan-details">
+        <div class="plan-text italic" data-i18n="premiumDetails">
+          Kugera ku bibazo byacu byose<br>
+          Ibizamini by'imyitozo bitagira umupaka<br>
+          Ububiko bw'amanota yose wakoreye ku bizamini<br>
+          Kugera ku byiciro byose nta nkomyi
+        </div>
+        
+        <div class="paid-plans-wrapper">
+          <div class="paid-plan-col">
+            <span class="renew-tag" data-i18n="dailyTag">BYIYUNGERA BURI MUNSI</span>
+            <a href="register.html" class="green-action-btn" data-i18n="payDailyBtn">Komeza kwishyura 500 RWF</a>
+          </div>
+          <div class="paid-plan-col">
+            <span class="renew-tag" data-i18n="monthlyTag">BYIYUNGERA BURI KWEZI</span>
+            <a href="register.html" class="green-action-btn" data-i18n="payMonthlyBtn">Komeza kwishyura 1000 RWF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h3 class="faq-title" data-i18n="faqTitle">Ibibazo bikunze kubazwa (FAQ)</h3>
+      
+      <details class="faq-details">
+        <summary data-i18n="q1">Mind bank ni iki?</summary>
+        <p class="faq-answer" data-i18n="a1">Mind bank ni urubuga rwabugenewe rwo gufasha abanyeshuri kwitegura neza ikizamini cy'uruhushya rw'agateganyo mu Rwanda binyuze mu myitozo n'ububiko bw'ibibazo.</p>
+      </details>
+
+      <details class="faq-details">
+        <summary data-i18n="q2">Mba ngomba kwishyura ifatabuguzi ngo ngere ku bibazo vya Mind bank?</summary>
+        <p class="faq-answer" data-i18n="a2">Ushobora gutangirira ku kizamini cy'ibuntu, cyangwa ugahitamo ifatabuguzi ry'umunsi (500 RWF) cyangwa iry'ukwezi (1000 RWF) kugira ngo ubone ibintu byose.</p>
+      </details>
+
+      <details class="faq-details">
+        <summary data-i18n="q3">Ni izihe nyungu zo gufata ifatabuguzi mu Mind bank?</summary>
+        <p class="faq-answer" data-i18n="a3">Ifatabuguzi ryagufasha kubona ibibazo birenga 300+, gukora ibizamini bitagira umupaka, gukurikirana amanota yawe, n'uburyo bwo kugera mu byiciro byose.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- Full-Width Dark Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="brand-col">
+        <h3>Mindbank.rw</h3>
+        <p data-i18n="footerSlogan">Ururo rushingiye ku ntsinzi yawe</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="supportTitle">Ufite ikibazo & Amategeko</h4>
+        <ul>
+          <li><a href="#" data-i18n="helpFaq">Ufite ikibazo/FAQ</a></li>
+          <li><a href="#" data-i18n="privacy">Ibyerekeye amakuru yawe</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="quickLinksTitle">Inzira zihuta</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="home">Ahabanza</a></li>
+          <li><a href="rules.html" data-i18n="roadRules">Amategeko y'Umuhanda</a></li>
+          <li><a href="practice.html" data-i18n="practiceRules">Amategeko y'Imyitozo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="contactTitle">Twandikire</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Mindbank.rw Amategeko yose aragengwa
+    </div>
+  </footer>
+
+  <!-- Internationalization Script -->
+  <script>
+    const translations = {
+      rw: {
+        pageTitle: "MINDbank Rwanda - Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo",
+        signIn: "Injira",
+        register: "IYANDIKISHE",
+        tryFree: "IGERAGEZE KU BUNTU",
+        heroTitle: "Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo",
+        benefitsIntro: "Hamwe n'ibibazo birenga 300+ n'ibisubizo byabyo, Mind bank igufasha kwongera ubumenyi bwawe:",
+        b1: "Ibibazo 20 kuri buri kizamini hamwe n'uburyo bwo kubarira amanota bikwereka ibyo wagize ukiyirangiza",
+        b2: "Ibizamini by'imyitozo biguha ibisubizo by'ukuri nyuma yo kubikora",
+        b3: "Uburyo bworoshye bwo gukoresha no kwishyura igiciro cyoroheye buri wese",
+        b4: "Ububiko bw'ibibazo buherekejwe n'ibibazo 300 n'ibisubizo byabyo",
+        exploreLink: "Shakisha mu ibyiciro byose",
+        trialTitle: "Tangira igihe cyawe cyo kugerageza ku buntu uyu munsi",
+        trialDetails: "Kuba wagera mu bubiko bw'ibibazo birenga 300+ n'ibisubizo byabyo<br>1 Ikizamini cy'imyitozo ku buntu<br>Kuba wagera ku byapa byo mu muhanda, amategeko y'umuhanda n'ibindi byinshi",
+        startTrialBtn: "Tangira kugerageza ku buntu",
+        premiumTitle: "Rwandikisha Premium",
+        premiumDetails: "Kugera ku bibazo byacu byose<br>Ibizamini by'imyitozo bitagira umupaka<br>Ububiko bw'amanota yose wakoreye ku bizamini<br>Kugera ku byiciro byose nta nkomyi",
+        dailyTag: "BYIYUNGERA BURI MUNSI",
+        payDailyBtn: "Komeza kwishyura 500 RWF",
+        monthlyTag: "BYIYUNGERA BURI KWEZI",
+        payMonthlyBtn: "Komeza kwishyura 1000 RWF",
+        faqTitle: "Ibibazo bikunze kubazwa (FAQ)",
+        q1: "Mind bank ni iki?",
+        a1: "Mind bank ni urubuga rwabugenewe rwo gufasha abanyeshuri kwitegura neza ikizamini cy'uruhushya rw'agateganyo mu Rwanda binyuze mu myitozo n'ububiko bw'ibibazo.",
+        q2: "Mba ngomba kwishyura ifatabuguzi ngo ngere ku bibazo vya Mind bank?",
+        a2: "Ushobora gutangirira ku kizamini cy'ibuntu, cyangwa ugahitamo ifatabuguzi ry'umunsi (500 RWF) cyangwa iry'ukwezi (1000 RWF) kugira ngo ubone ibintu byose.",
+        q3: "Ni izihe nyungu zo gufata ifatabuguzi mu Mind bank?",
+        a3: "Ifatabuguzi ryagufasha kubona ibibazo birenga 300+, gukora ibizamini bitagira umupaka, gukurikirana amanota yawe, n'uburyo bwo kugera mu byiciro byose.",
+        footerSlogan: "Ururo rushingiye ku ntsinzi yawe",
+        supportTitle: "Ufite ikibazo & Amategeko",
+        helpFaq: "Ufite ikibazo/FAQ",
+        privacy: "Ibyerekeye amakuru yawe",
+        quickLinksTitle: "Inzira zihuta",
+        home: "Ahabanza",
+        roadRules: "Amategeko y'Umuhanda",
+        practiceRules: "Amategeko y'Imyitozo",
+        contactTitle: "Twandikire"
+      },
+      en: {
+        pageTitle: "MINDbank Rwanda - Great start for your Provisional Driving test preparations",
+        signIn: "Sign in",
+        register: "REGISTER",
+        tryFree: "TRY FOR FREE",
+        heroTitle: "Great start for your Provisional Driving test preparations",
+        benefitsIntro: "With over 300+ questions and their answers, Mind bank brings you these benefits:",
+        b1: "20 Questions per test with a marking system that generates your result after the test",
+        b2: "Practice tests that generate rightful answers after taking tests",
+        b3: "User friendly interface and user friendly costs",
+        b4: "Question bank with 300 questions and their answers",
+        exploreLink: "Explore all categories",
+        trialTitle: "Start your free trial today",
+        trialDetails: "Access to Our Question bank with over 300+ questions and answers<br>1 Free practice test<br>Access to Road signs, Traffic rules and many more",
+        startTrialBtn: "Start free trial",
+        premiumTitle: "Premium",
+        premiumDetails: "Access to all our questions<br>Unlimited practice tests<br>Database for all marks obtained on tests<br>Premium access to all categories",
+        dailyTag: "RENEWS DAILY",
+        payDailyBtn: "Proceed to Pay 500 RWF",
+        monthlyTag: "RENEWS MONTHLY",
+        payMonthlyBtn: "Proceed to Pay 1000 RWF",
+        faqTitle: "FAQ",
+        q1: "What is Mind bank",
+        a1: "Mind bank is an online platform designed to prepare students for the Rwandan provisional driving license exam through practice tests and question banks.",
+        q2: "Will I need a subscription to access Mind bank",
+        a2: "You can start with a free trial, or choose from daily (500 RWF) or monthly (1000 RWF) subscription plans for full access.",
+        q3: "What are the benefits of subscribing to Mind bank",
+        a3: "Subscribing unlocks all 300+ questions, unlimited practice tests, performance tracking, and full access to all categories.",
+        footerSlogan: "The Bridge to your success",
+        supportTitle: "Support and Legal",
+        helpFaq: "Help/FAQ",
+        privacy: "Privacy Policy",
+        quickLinksTitle: "Quick links",
+        home: "Home",
+        roadRules: "Road Rules",
+        practiceRules: "Practice Rules",
+        contactTitle: "Contact us"
+      }
+    };
+
+    // Default language set to Kinyarwanda ('rw')
+    let currentLang = localStorage.getItem('preferredLang') || 'rw';
+
+    const langSelectBtn = document.getElementById('langSelectBtn');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('preferredLang', lang);
+      document.documentElement.lang = lang;
+      currentLangLabel.textContent = lang.toUpperCase();
+
+      document.title = translations[lang].pageTitle;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      langOptions.forEach(opt => {
+        if (opt.getAttribute('data-lang') === lang) {
+          opt.classList.add('active');
+        } else {
+          opt.classList.remove('active');
+        }
+      });
+    }
+
+    // Toggle language dropdown menu
+    langSelectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+      langMenu.classList.remove('show');
+    });
+
+    langOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const selectedLang = opt.getAttribute('data-lang');
+        applyLanguage(selectedLang);
+        langMenu.classList.remove('show');
+      });
+    });
+
+    // Initialize with Kinyarwanda as default landing language
+    applyLanguage(currentLang);
+  </script>
+</body>
+</html>
