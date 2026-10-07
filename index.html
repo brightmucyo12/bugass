@@ -426,6 +426,70 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 16px;
     }
+
+    /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
+    @media screen and (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+        align-items: center;
+      }
+
+      .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 24px 20px 40px;
+      }
+
+      .hero-banner {
+        height: auto;
+        padding: 40px 16px;
+        align-items: center;
+      }
+
+      .hero-banner h1 {
+        font-size: 18px;
+      }
+
+      .plan-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .plan-label {
+        width: 100%;
+      }
+
+      .paid-plans-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .paid-plan-col {
+        width: 100%;
+      }
+
+      .green-action-btn {
+        width: 100%;
+        display: block;
+      }
+
+      .footer {
+        padding: 30px 20px 20px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -455,7 +519,7 @@
         <span>👤</span>
         <span data-i18n="signIn">Injira</span>
       </a>
-      <a href="register.html" class="btn-secondary" data-i18n="register">IYYANDIKISHE</a>
+      <a href="register.html" class="btn-secondary" data-i18n="register">IYANDIKISHE</a>
       <a href="freetierdashboard.html" class="btn-primary" data-i18n="tryFree">IGERAGEZE KU BUNTU</a>
     </div>
   </header>
