@@ -429,10 +429,14 @@
 
     /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
     @media screen and (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
       .header {
         flex-direction: column;
         gap: 12px;
-        padding: 16px 20px;
+        padding: 16px 15px;
         align-items: center;
       }
 
@@ -444,12 +448,12 @@
       }
 
       .container {
-        padding: 24px 20px 40px;
+        padding: 20px 15px 40px;
       }
 
       .hero-banner {
         height: auto;
-        padding: 40px 16px;
+        padding: 30px 15px;
         align-items: center;
       }
 
@@ -466,23 +470,26 @@
         width: 100%;
       }
 
+      /* Kept side-by-side as requested */
       .paid-plans-wrapper {
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
         width: 100%;
       }
 
       .paid-plan-col {
-        width: 100%;
+        flex: 1;
       }
 
       .green-action-btn {
+        padding: 10px 12px;
+        font-size: 13px;
         width: 100%;
-        display: block;
       }
 
       .footer {
-        padding: 30px 20px 20px;
+        padding: 30px 15px 20px;
       }
 
       .footer-container {
