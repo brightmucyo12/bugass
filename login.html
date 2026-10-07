@@ -18,6 +18,11 @@
     }
 
     /* CLEAR SEMI-TRANSPARENT BLUE PAGE BACKGROUND */
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       background: linear-gradient(135deg, rgba(220, 233, 250, 0.9) 0%, rgba(195, 218, 245, 0.85) 100%);
       min-height: 100vh;
@@ -31,7 +36,8 @@
 
     .header-bar {
       width: 100%;
-      padding: 30px 20px 10px 40px;
+      max-width: 100%;
+      padding: 30px 0 10px 0;
       display: flex;
       justify-content: flex-start;
       margin-bottom: 20px;
@@ -118,6 +124,7 @@
       text-decoration: none;
       letter-spacing: 0.5px;
       margin-top: 10px;
+      max-width: 100%;
     }
 
     .login-btn:hover {
@@ -132,6 +139,8 @@
       text-decoration: underline;
       text-underline-offset: 3px;
       text-align: center;
+      max-width: 100%;
+      word-wrap: break-word;
     }
 
     .register-link:hover {
@@ -147,7 +156,7 @@
 
   <h1 class="login-title">Sign In</h1>
 
-  <form action="#" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+  <form action="#" method="POST" style="width: 100%; max-width: 480px; display: flex; flex-direction: column; align-items: center;">
     <div class="login-card">
       <div class="form-group">
         <label class="form-label" for="phone">Phone number</label>
