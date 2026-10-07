@@ -63,14 +63,60 @@
       gap: 16px;
     }
 
+    /* Hamburger Toggle Button */
+    .hamburger-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 28px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .hamburger-btn span {
+      width: 100%;
+      height: 3px;
+      background-color: #0f172a;
+      border-radius: 2px;
+      transition: all 0.3s linear;
+    }
+
+    /* Dropdown Hamburger Menu */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 40px;
+      background: #ffffff;
+      border: 1px solid rgba(147, 197, 253, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 100;
+      min-width: 200px;
+    }
+
+    .hamburger-menu.show {
+      display: flex;
+    }
+
     /* Dropdown Language Menu */
     .lang-dropdown-wrapper {
       position: relative;
+      width: 100%;
     }
 
     .lang-select {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      width: 100%;
       gap: 6px;
       font-size: 14px;
       font-weight: 700;
@@ -97,8 +143,8 @@
       border: 1px solid #cbd5e1;
       border-radius: 8px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      width: 150px;
-      z-index: 100;
+      width: 100%;
+      z-index: 102;
       overflow: hidden;
     }
 
@@ -137,10 +183,12 @@
       font-weight: 600;
       color: #0f172a;
       text-decoration: none;
+      padding: 4px 0;
     }
 
     .btn-secondary {
-      display: inline-block;
+      display: block;
+      text-align: center;
       border: 2px solid #006400;
       color: #006400;
       padding: 8px 18px;
@@ -434,17 +482,11 @@
       }
 
       .header {
-        flex-direction: column;
-        gap: 12px;
         padding: 16px 15px;
-        align-items: center;
       }
 
-      .header-right {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        gap: 10px;
+      .hamburger-menu {
+        right: 15px;
       }
 
       .container {
@@ -505,29 +547,39 @@
   <header class="header">
     <div class="brand-name">MINDbank Rwanda</div>
     <div class="header-right">
-      <!-- Language Selection Dropdown -->
-      <div class="lang-dropdown-wrapper">
-        <button class="lang-select" id="langSelectBtn" aria-label="Select Language">
-          <span>🌐</span>
-          <span id="currentLangLabel">RW</span>
-          <small>▼</small>
-        </button>
-        <div class="lang-menu" id="langMenu">
-          <div class="lang-option active" data-lang="rw">
-            <span>🇷🇼</span> Kinyarwanda
-          </div>
-          <div class="lang-option" data-lang="en">
-            <span>🇬🇧</span> English
+      <a href="freetierdashboard.html" class="btn-primary" data-i18n="tryFree">IGERAGEZE KU BUNTU</a>
+      
+      <!-- Hamburger Toggle Button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Hamburger Menu Dropdown -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <!-- Language Selection Dropdown -->
+        <div class="lang-dropdown-wrapper">
+          <button class="lang-select" id="langSelectBtn" aria-label="Select Language">
+            <span>🌐 <span id="currentLangLabel">RW</span></span>
+            <small>▼</small>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <div class="lang-option active" data-lang="rw">
+              <span>🇷🇼</span> Kinyarwanda
+            </div>
+            <div class="lang-option" data-lang="en">
+              <span>🇬🇧</span> English
+            </div>
           </div>
         </div>
-      </div>
 
-      <a href="login.html" class="sign-in">
-        <span>👤</span>
-        <span data-i18n="signIn">Injira</span>
-      </a>
-      <a href="register.html" class="btn-secondary" data-i18n="register">IYANDIKISHE</a>
-      <a href="freetierdashboard.html" class="btn-primary" data-i18n="tryFree">IGERAGEZE KU BUNTU</a>
+        <a href="login.html" class="sign-in">
+          <span>👤</span>
+          <span data-i18n="signIn">Injira</span>
+        </a>
+        <a href="register.html" class="btn-secondary" data-i18n="register">IYANDIKISHE</a>
+      </div>
     </div>
   </header>
 
@@ -650,7 +702,7 @@
     </div>
   </footer>
 
-  <!-- Internationalization Script -->
+  <!-- Internationalization & Hamburger Script -->
   <script>
     const translations = {
       rw: {
@@ -739,6 +791,9 @@
     const currentLangLabel = document.getElementById('currentLangLabel');
     const langOptions = document.querySelectorAll('.lang-option');
 
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+
     function applyLanguage(lang) {
       currentLang = lang;
       localStorage.setItem('preferredLang', lang);
@@ -763,14 +818,26 @@
       });
     }
 
+    // Toggle Hamburger Menu
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburgerMenu.classList.toggle('show');
+    });
+
     // Toggle language dropdown menu
     langSelectBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       langMenu.classList.toggle('show');
     });
 
+    // Close menus on outside click
     document.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('show');
       langMenu.classList.remove('show');
+    });
+
+    hamburgerMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     langOptions.forEach(opt => {
