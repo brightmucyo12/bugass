@@ -95,7 +95,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
+            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-base md:text-lg leading-relaxed">
                 <div class="flex items-start gap-2.5 sm:gap-3">
                     <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
                     <p class="m-0">
@@ -187,26 +187,31 @@
     <!-- ================= 5. FOOTER SECTION ================= -->
     <footer class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 md:p-14 flex flex-col items-center">
         
-        <!-- Links Columns Grid -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16 text-center md:text-left">
+        <!-- Desktop Grid (3 columns) / Mobile Layout (Top Row: About & Discover side-by-side, Bottom Row: Connect centered) -->
+        <div class="w-full md:grid md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16 text-left">
             
-            <!-- Column 1: About us -->
-            <div class="flex flex-col gap-3 sm:gap-4">
-                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
-                <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
-                <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+            <!-- Mobile Container for About Us & Discover on the same line -->
+            <div class="flex flex-row justify-between items-start gap-4 w-full md:contents mb-8 md:mb-0">
+                
+                <!-- Column 1: About us -->
+                <div class="flex flex-col gap-3 sm:gap-4 flex-1">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
+                    <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+                </div>
+
+                <!-- Column 2: Discover -->
+                <div class="flex flex-col gap-3 sm:gap-4 flex-1">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
+                    <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
+                    <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
+                    <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
+                </div>
+
             </div>
 
-            <!-- Column 2: Discover -->
-            <div class="flex flex-col gap-3 sm:gap-4">
-                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
-                <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
-                <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
-                <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
-            </div>
-
-            <!-- Column 3: Connect with Us -->
-            <div class="flex flex-col gap-3 sm:gap-4">
+            <!-- Column 3: Connect with Us (Centered on mobile below top row, standard left-align on desktop) -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
                 <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
                 <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
                 <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
