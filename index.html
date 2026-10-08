@@ -1,216 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mindbank</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            overflow-x: hidden;
-        }
-        /* Benefits Card Fill D9D9D9 22% & Radius 45px on desktop, slightly tighter on mobile */
-        .benefit-card {
-            background-color: rgba(217, 217, 217, 0.22);
-            border-radius: 28px;
-        }
-        @media (min-width: 768px) {
-            .benefit-card {
-                border-radius: 45px;
-            }
-        }
-    </style>
-</head>
-<body class="bg-white text-gray-900 min-h-screen py-4 px-3 sm:px-6 md:px-12 flex flex-col items-center">
-
-    <!-- ================= 1. HERO SECTION ================= -->
-    <header class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border-2 border-[#1080d0] shadow-2xl relative overflow-hidden mb-12 sm:mb-16">
-        
-        <!-- Navigation Bar -->
-        <nav class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <!-- Logo -->
-            <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-white hover:opacity-90 transition">
-                mindbank
-            </a>
-
-            <!-- Central Nav Links Badge -->
-            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 bg-[#0a2e2b] px-4 sm:px-6 py-2 rounded-full border border-[#13423d] text-xs sm:text-sm text-gray-300">
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#pricing" class="hover:text-white transition">Pricing</a>
-                <a href="#questions" class="hover:text-white transition">Questions</a>
-                <a href="#whats-new" class="hover:text-white transition">What's new</a>
-            </div>
-
-            <!-- Header Action Buttons -->
-            <div class="flex items-center gap-3">
-                <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#13423d] transition">
-                    Login
-                </a>
-                <a href="register.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-5 sm:px-6 py-2 rounded-full border border-[#13423d] transition">
-                    Sign up
-                </a>
-            </div>
-        </nav>
-
-        <!-- Hero Content Area -->
-        <div class="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center text-center">
-            <!-- Subtitle Badge -->
-            <div class="bg-[#072a26] text-[#2dd4bf] text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#10423c] mb-6 sm:mb-8 font-medium max-w-full">
-                Prepare for your Provisional Driving License Today
-            </div>
-
-            <!-- Main Heading -->
-            <h1 class="max-w-3xl text-lg sm:text-2xl lg:text-3xl font-bold leading-relaxed sm:leading-relaxed text-white tracking-wide">
-                Pass your theory test on the first try. Master real provisional driving license questions with our free, bite-sized practice quizzes and hit the road sooner.
-            </h1>
-
-            <!-- Central Green Placeholder Box -->
-            <div class="mt-8 sm:mt-10 w-full max-w-lg h-28 sm:h-36 md:h-44 bg-[#0a2f2b] rounded-2xl border border-[#0f3d38]"></div>
-        </div>
-
-    </header>
-
-    <!-- ================= 2. BENEFITS SECTION ================= -->
-    <main class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20">
-        
-        <!-- Section Intro Heading -->
-        <h2 class="text-base sm:text-lg md:text-xl font-semibold text-black mb-6">
-            With over 300+ questions and their answers, Mind bank brings you these benefits:
-        </h2>
-
-        <!-- Cards Container -->
-        <div class="flex flex-col gap-4 sm:gap-6">
-
-            <!-- Card 1 -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        A streamlined learning environment by featuring exactly twenty dynamic questions on each practice test, utilizing an automated marking system that scores your answers in real time to generate and deliver your complete personalized result breakdown immediately after you finish answering the very last question.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        A highly intuitive, user-friendly interface with exceptionally affordable, user-friendly costs, ensuring that preparing your provisional exam remains both seamless and budget-friendly while featuring a dynamic, comprehensive dashboard that visually tracks your daily progress and key performance metrics to keep you fully informed every single step of the way.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        Our innovative online platform features a comprehensive question bank containing three hundred meticulously detailed questions and complete answers, uniquely designed to evaluate user knowledge, track individual study progress, offer instantaneous feedback, and ultimately deliver an exceptionally seamless digital learning experience for every student preparing for their upcoming final course examinations.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </main>
-
-    <!-- ================= 3. PRICING MODEL SECTION ================= -->
-    <section id="pricing" class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20 flex flex-col items-center">
-        
-        <!-- Section Header -->
-        <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-black text-center mb-6 sm:mb-8">
-            Pricing Model
-        </h2>
-
-        <!-- Pricing Cards Grid -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            
-            <!-- Basic Card -->
-            <div class="bg-[#fde2e4] border-2 border-[#1080d0] h-[320px] sm:h-[420px] p-6 text-[#726367] text-lg sm:text-xl font-normal">
-                Basic
-            </div>
-
-            <!-- Standard Card -->
-            <div class="bg-[#c8f7c5] h-[320px] sm:h-[420px] p-6 text-[#5b8758] text-lg sm:text-xl font-normal">
-                Standard
-            </div>
-
-            <!-- Premium Card -->
-            <div class="bg-[#9eeaf3] h-[320px] sm:h-[420px] p-6 text-[#356e75] text-lg sm:text-xl font-bold">
-                Premium
-            </div>
-
-        </div>
-
-        <!-- Bottom Gray Centered Card -->
-        <div class="w-full max-w-md h-[280px] sm:h-[380px] bg-[#d9d9d9]"></div>
-
-    </section>
-
-    <!-- ================= 4. FAQ SECTION ================= -->
-    <section id="questions" class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20">
-        
-        <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-6 sm:mb-8">
-            Frequently asked Questions
-        </h2>
-
-        <div class="flex flex-col gap-5 sm:gap-6 text-black font-semibold text-sm sm:text-base md:text-lg">
-            
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>What is MindBank</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>What is included in my paid subscription?</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>How much is the subscription, and how can I pay?</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>Do you offer a free trial and what is included</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-        </div>
-
-    </section>
-
 <!-- ================= 5. FOOTER SECTION ================= -->
     <footer class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 md:p-14 flex flex-col items-center">
         
         <!-- Desktop Grid (3 columns) / Mobile Layout -->
         <div class="w-full md:grid md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16">
             
-            <!-- Column 1: About us (Top Left on mobile) -->
-            <div class="flex flex-col gap-3 sm:gap-4 text-left">
-                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
-                <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
-                <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+            <!-- Mobile Row: About Us (Left) & Discover (Far Right) -->
+            <div class="flex flex-row justify-between items-start w-full md:contents mb-8 md:mb-0">
+                
+                <!-- Column 1: About us -->
+                <div class="flex flex-col gap-3 sm:gap-4 text-left">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
+                    <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+                </div>
+
+                <!-- Column 2: Discover (Far right on mobile) -->
+                <div class="flex flex-col gap-3 sm:gap-4 text-right md:text-left">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
+                    <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
+                    <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
+                    <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
+                </div>
+
             </div>
 
-            <!-- Mobile Top Row Right / Desktop Column 3: Connect with Us -->
-            <div class="flex flex-col gap-3 sm:gap-4 text-right md:text-left items-end md:items-start absolute md:relative right-6 sm:right-10 md:right-0 top-6 sm:top-10 md:top-0 md:order-3">
+            <!-- Column 3: Connect with Us (Centered on mobile, standard left-align on desktop) -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
                 <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
                 <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
                 <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
                 <a href="#twitter" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Twitter</a>
-            </div>
-
-            <!-- Column 2: Discover (Brought down and centered on mobile, standard layout on desktop) -->
-            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start mt-8 md:mt-0 md:order-2">
-                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
-                <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
-                <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
-                <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
             </div>
 
         </div>
