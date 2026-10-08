@@ -1,855 +1,226 @@
 <!DOCTYPE html>
-<html lang="rw">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MINDbank Rwanda - Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo</title>
-  
-  <!-- Import Inter Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <style>
-    /* Reset & Exact Typography */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    /* Soft Pastel Gradient Background */
-    html {
-      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
-      min-height: 100%;
-    }
-
-    body {
-      /* Soft Translucent Light Blue Backdrop */
-      background-color: rgba(239, 246, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      color: #0f172a;
-      line-height: 1.4;
-      -webkit-font-smoothing: antialiased;
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    /* --- HEADER --- */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 40px;
-      background-color: rgba(255, 255, 255, 0.65);
-      border-bottom: 1px solid rgba(147, 197, 253, 0.5);
-      width: 100%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-      position: relative;
-    }
-
-    .brand-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: #0f172a;
-      letter-spacing: -0.2px;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    /* Hamburger Toggle Button */
-    .hamburger-btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 28px;
-      height: 24px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 101;
-    }
-
-    .hamburger-btn span {
-      width: 100%;
-      height: 3px;
-      background-color: #0f172a;
-      border-radius: 2px;
-      transition: all 0.3s linear;
-    }
-
-    /* Dropdown Hamburger Menu */
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 40px;
-      background: #ffffff;
-      border: 1px solid rgba(147, 197, 253, 0.8);
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      padding: 16px;
-      flex-direction: column;
-      gap: 14px;
-      z-index: 100;
-      min-width: 200px;
-    }
-
-    .hamburger-menu.show {
-      display: flex;
-    }
-
-    /* Dropdown Language Menu */
-    .lang-dropdown-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
-    .lang-select {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #0f172a;
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(147, 197, 253, 0.8);
-      border-radius: 6px;
-      padding: 6px 12px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .lang-select:hover {
-      background: #ffffff;
-      border-color: #3b82f6;
-    }
-
-    .lang-menu {
-      display: none;
-      position: absolute;
-      top: 105%;
-      right: 0;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      z-index: 102;
-      overflow: hidden;
-    }
-
-    .lang-menu.show {
-      display: block;
-    }
-
-    .lang-option {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #1e293b;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .lang-option:hover {
-      background-color: #eff6ff;
-      color: #1d4ed8;
-    }
-
-    .lang-option.active {
-      font-weight: 800;
-      background-color: #dbeafe;
-      color: #1e40af;
-    }
-
-    .sign-in {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #0f172a;
-      text-decoration: none;
-      padding: 4px 0;
-    }
-
-    .btn-secondary {
-      display: block;
-      text-align: center;
-      border: 2px solid #006400;
-      color: #006400;
-      padding: 8px 18px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      transition: all 0.2s;
-      border-radius: 4px;
-    }
-
-    .btn-secondary:hover {
-      background-color: #006400;
-      color: #FFFFFF;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background-color: #006400;
-      color: #FFFFFF;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      transition: background-color 0.2s;
-      border-radius: 4px;
-    }
-
-    .btn-primary:hover {
-      background-color: #004d00;
-    }
-
-    /* --- HERO BANNER --- */
-    .hero-banner {
-      background-color: rgba(15, 23, 42, 0.92);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      height: 220px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 30px;
-    }
-
-    .hero-banner h1 {
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    /* --- MAIN CONTAINER --- */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 35px 40px 60px;
-    }
-
-    /* --- BENEFITS --- */
-    .benefits-section {
-      margin-bottom: 35px;
-    }
-
-    .benefits-intro {
-      font-size: 15px;
-      font-weight: 600;
-      font-style: italic;
-      color: #1e293b;
-      margin-bottom: 8px;
-    }
-
-    .benefits-list {
-      list-style-type: disc;
-      font-size: 15px;
-      font-weight: 500;
-      font-style: italic;
-      color: #1e293b;
-      margin-bottom: 25px;
-      padding-left: 24px;
-    }
-
-    .benefits-list li {
-      margin-bottom: 4px;
-    }
-
-    .explore-link {
-      display: inline-block;
-      color: #991b1b;
-      font-size: 16px;
-      font-weight: 800;
-      text-decoration: underline;
-    }
-
-    /* --- ACCESS PLANS SECTION --- */
-    .plan-row {
-      display: flex;
-      margin-top: 35px;
-      align-items: flex-start;
-      width: 100%;
-    }
-
-    .plan-label {
-      width: 250px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #0f172a;
-      flex-shrink: 0;
-    }
-
-    .plan-label.italic {
-      font-style: italic;
-    }
-
-    .plan-details {
-      flex-grow: 1;
-    }
-
-    .plan-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1e293b;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    .plan-text.italic {
-      font-style: italic;
-    }
-
-    .green-action-btn {
-      display: inline-block;
-      background-color: #006400;
-      color: #FFFFFF;
-      padding: 12px 32px;
-      font-size: 15px;
-      font-weight: 700;
-      font-style: italic;
-      text-decoration: none;
-      text-align: center;
-      transition: background-color 0.2s;
-      border-radius: 4px;
-    }
-
-    .green-action-btn:hover {
-      background-color: #004d00;
-    }
-
-    /* Paid Plans Grid */
-    .paid-plans-wrapper {
-      display: flex;
-      gap: 30px;
-      margin-top: 10px;
-    }
-
-    .paid-plan-col {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .renew-tag {
-      font-size: 13px;
-      font-weight: 800;
-      font-style: italic;
-      color: #0f172a;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-    }
-
-    /* --- FAQ SECTION --- */
-    .faq-section {
-      margin-top: 60px;
-    }
-
-    .faq-title {
-      font-size: 16px;
-      font-weight: 800;
-      font-style: italic;
-      color: #0f172a;
-      margin-bottom: 16px;
-    }
-
-    .faq-details {
-      font-size: 15px;
-      font-weight: 600;
-      font-style: italic;
-      color: #1e293b;
-      margin-bottom: 12px;
-      cursor: pointer;
-    }
-
-    .faq-details summary {
-      list-style: none;
-    }
-
-    .faq-details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-details summary::before {
-      content: "+ ";
-      font-weight: 800;
-      font-style: normal;
-      margin-right: 4px;
-    }
-
-    .faq-answer {
-      font-style: normal;
-      font-size: 14px;
-      margin-top: 6px;
-      padding-left: 18px;
-      color: #334155;
-    }
-
-    /* --- FOOTER --- */
-    .footer {
-      background-color: rgba(15, 23, 42, 0.95);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #FFFFFF;
-      padding: 40px 50px 20px;
-      width: 100%;
-    }
-
-    .footer-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto 30px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand-col h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .brand-col p {
-      font-size: 12px;
-      font-weight: 400;
-      color: #94a3b8;
-    }
-
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #FFFFFF;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      font-size: 12px;
-      font-weight: 500;
-      margin-bottom: 6px;
-      color: #cbd5e1;
-    }
-
-    .footer-col a {
-      color: #cbd5e1;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: #FFFFFF;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 11px;
-      font-weight: 500;
-      color: #64748b;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 16px;
-    }
-
-    /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
-    @media screen and (max-width: 768px) {
-      body {
-        overflow-x: hidden;
-      }
-
-      .header {
-        padding: 16px 15px;
-      }
-
-      .hamburger-menu {
-        right: 15px;
-      }
-
-      .container {
-        padding: 20px 15px 40px;
-      }
-
-      .hero-banner {
-        height: auto;
-        padding: 30px 15px;
-        align-items: center;
-      }
-
-      .hero-banner h1 {
-        font-size: 18px;
-      }
-
-      .plan-row {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .plan-label {
-        width: 100%;
-      }
-
-      /* Kept side-by-side as requested */
-      .paid-plans-wrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 12px;
-        width: 100%;
-      }
-
-      .paid-plan-col {
-        flex: 1;
-      }
-
-      .green-action-btn {
-        padding: 10px 12px;
-        font-size: 13px;
-        width: 100%;
-      }
-
-      .footer {
-        padding: 30px 15px 20px;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        gap: 24px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mindbank</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        /* Benefits Card Fill D9D9D9 22% & Radius 45px on desktop, slightly tighter on mobile */
+        .benefit-card {
+            background-color: rgba(217, 217, 217, 0.22);
+            border-radius: 28px;
+        }
+        @media (min-width: 768px) {
+            .benefit-card {
+                border-radius: 45px;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-gray-900 min-h-screen py-4 px-3 sm:px-6 md:px-12 flex flex-col items-center">
 
-  <!-- Navigation Header -->
-  <header class="header">
-    <div class="brand-name">MINDbank Rwanda</div>
-    <div class="header-right">
-      <a href="freetierdashboard.html" class="btn-primary" data-i18n="tryFree">IGERAGEZE KU BUNTU</a>
-      
-      <!-- Hamburger Toggle Button -->
-      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- Hamburger Menu Dropdown -->
-      <div class="hamburger-menu" id="hamburgerMenu">
-        <!-- Language Selection Dropdown -->
-        <div class="lang-dropdown-wrapper">
-          <button class="lang-select" id="langSelectBtn" aria-label="Select Language">
-            <span>🌐 <span id="currentLangLabel">RW</span></span>
-            <small>▼</small>
-          </button>
-          <div class="lang-menu" id="langMenu">
-            <div class="lang-option active" data-lang="rw">
-              <span>🇷🇼</span> Kinyarwanda
-            </div>
-            <div class="lang-option" data-lang="en">
-              <span>🇬🇧</span> English
-            </div>
-          </div>
-        </div>
-
-        <a href="login.html" class="sign-in">
-          <span>👤</span>
-          <span data-i18n="signIn">Injira</span>
-        </a>
-        <a href="register.html" class="btn-secondary" data-i18n="register">IYANDIKISHE</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Banner -->
-  <section class="hero-banner">
-    <h1 data-i18n="heroTitle">Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo</h1>
-  </section>
-
-  <!-- Main Content Container -->
-  <main class="container">
-
-    <!-- Benefits / What We Do -->
-    <section class="benefits-section">
-      <p class="benefits-intro" data-i18n="benefitsIntro">Hamwe n'ibibazo birenga 300+ n'ibisubizo byabyo, Mind bank igufasha kurongora ubumenyi bwawe:</p>
-      <ul class="benefits-list">
-        <li data-i18n="b1">Ibibazo 20 kuri buri kizamini hamwe n'uburyo bwo kubarira amanota bikwereka ibyo wagize ukiyirangiza</li>
-        <li data-i18n="b2">Ibizamini by'imyitozo biguha ibisubizo by'ukuri nyuma yo kubikora</li>
-        <li data-i18n="b3">Uburyo bworoshye bwo gukoresha no kwishyura igiciro cyoroheye buri wese</li>
-        <li data-i18n="b4">Ububiko bw'ibibazo buherekejwe n'ibibazo 300 n'ibisubizo byabyo</li>
-      </ul>
-      <a href="#" class="explore-link" data-i18n="exploreLink">Shakisha mu ibyiciro byose</a>
-    </section>
-
-    <!-- Free Trial Plan Row -->
-    <section class="plan-row">
-      <div class="plan-label" data-i18n="trialTitle">Tanga igihe cyawe cyo kugerageza ku buntu uyu munsi</div>
-      <div class="plan-details">
-        <div class="plan-text" data-i18n="trialDetails">
-          Kuba wagera mu bubiko bw'ibibazo birenga 300+ n'ibisubizo byabyo<br>
-          Ikizamini 1 cy'imyitozo ku buntu<br>
-          Kuba wagera ku byapa byo mu muhanda, amategeko y'umuhanda n'ibindi byinshi
-        </div>
-        <a href="freetierdashboard.html" class="green-action-btn" data-i18n="startTrialBtn">Tangira kugerageza ku buntu</a>
-      </div>
-    </section>
-
-    <!-- Premium Access Plan Row -->
-    <section class="plan-row">
-      <div class="plan-label italic" data-i18n="premiumTitle">Rwandikisha Premium</div>
-      <div class="plan-details">
-        <div class="plan-text italic" data-i18n="premiumDetails">
-          Kugera ku bibazo byacu byose<br>
-          Ibizamini by'imyitozo bitagira umupaka<br>
-          Ububiko bw'amanota yose wakoreye ku bizamini<br>
-          Kugera ku byiciro byose nta nkomyi
-        </div>
+    <!-- ================= 1. HERO SECTION ================= -->
+    <header class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border-2 border-[#1080d0] shadow-2xl relative overflow-hidden mb-12 sm:mb-16">
         
-        <div class="paid-plans-wrapper">
-          <div class="paid-plan-col">
-            <span class="renew-tag" data-i18n="dailyTag">BYIYUNGERA BURI MUNSI</span>
-            <a href="register.html" class="green-action-btn" data-i18n="payDailyBtn">Komeza kwishyura 500 RWF</a>
-          </div>
-          <div class="paid-plan-col">
-            <span class="renew-tag" data-i18n="monthlyTag">BYIYUNGERA BURI KWEZI</span>
-            <a href="register.html" class="green-action-btn" data-i18n="payMonthlyBtn">Komeza kwishyura 1000 RWF</a>
-          </div>
+        <!-- Navigation Bar -->
+        <nav class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-white hover:opacity-90 transition">
+                mindbank
+            </a>
+
+            <!-- Central Nav Links Badge -->
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 bg-[#0a2e2b] px-4 sm:px-6 py-2 rounded-full border border-[#13423d] text-xs sm:text-sm text-gray-300">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                <a href="#questions" class="hover:text-white transition">Questions</a>
+                <a href="#whats-new" class="hover:text-white transition">What's new</a>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#13423d] transition">
+                    Login
+                </a>
+                <a href="register.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-5 sm:px-6 py-2 rounded-full border border-[#13423d] transition">
+                    Sign up
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Content Area -->
+        <div class="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center text-center">
+            <!-- Subtitle Badge -->
+            <div class="bg-[#072a26] text-[#2dd4bf] text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#10423c] mb-6 sm:mb-8 font-medium max-w-full">
+                Prepare for your Provisional Driving License Today
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="max-w-3xl text-lg sm:text-2xl lg:text-3xl font-bold leading-relaxed sm:leading-relaxed text-white tracking-wide">
+                Pass your theory test on the first try. Master real provisional driving license questions with our free, bite-sized practice quizzes and hit the road sooner.
+            </h1>
+
+            <!-- Central Green Placeholder Box -->
+            <div class="mt-8 sm:mt-10 w-full max-w-lg h-28 sm:h-36 md:h-44 bg-[#0a2f2b] rounded-2xl border border-[#0f3d38]"></div>
         </div>
-      </div>
+
+    </header>
+
+    <!-- ================= 2. BENEFITS SECTION ================= -->
+    <main class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20">
+        
+        <!-- Section Intro Heading -->
+        <h2 class="text-base sm:text-lg md:text-xl font-semibold text-black mb-6">
+            With over 300+ questions and their answers, Mind bank brings you these benefits:
+        </h2>
+
+        <!-- Cards Container -->
+        <div class="flex flex-col gap-4 sm:gap-6">
+
+            <!-- Card 1 -->
+            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
+                <div class="flex items-start gap-2.5 sm:gap-3">
+                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
+                    <p class="m-0">
+                        A streamlined learning environment by featuring exactly twenty dynamic questions on each practice test, utilizing an automated marking system that scores your answers in real time to generate and deliver your complete personalized result breakdown immediately after you finish answering the very last question.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
+                <div class="flex items-start gap-2.5 sm:gap-3">
+                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
+                    <p class="m-0">
+                        A highly intuitive, user-friendly interface with exceptionally affordable, user-friendly costs, ensuring that preparing your provisional exam remains both seamless and budget-friendly while featuring a dynamic, comprehensive dashboard that visually tracks your daily progress and key performance metrics to keep you fully informed every single step of the way.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
+                <div class="flex items-start gap-2.5 sm:gap-3">
+                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
+                    <p class="m-0">
+                        Our innovative online platform features a comprehensive question bank containing three hundred meticulously detailed questions and complete answers, uniquely designed to evaluate user knowledge, track individual study progress, offer instantaneous feedback, and ultimately deliver an exceptionally seamless digital learning experience for every student preparing for their upcoming final course examinations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ================= 3. PRICING MODEL SECTION ================= -->
+    <section id="pricing" class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20 flex flex-col items-center">
+        
+        <!-- Section Header -->
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-black text-center mb-6 sm:mb-8">
+            Pricing Model
+        </h2>
+
+        <!-- Pricing Cards Grid -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            
+            <!-- Basic Card -->
+            <div class="bg-[#fde2e4] border-2 border-[#1080d0] h-[320px] sm:h-[420px] p-6 text-[#726367] text-lg sm:text-xl font-normal">
+                Basic
+            </div>
+
+            <!-- Standard Card -->
+            <div class="bg-[#c8f7c5] h-[320px] sm:h-[420px] p-6 text-[#5b8758] text-lg sm:text-xl font-normal">
+                Standard
+            </div>
+
+            <!-- Premium Card -->
+            <div class="bg-[#9eeaf3] h-[320px] sm:h-[420px] p-6 text-[#356e75] text-lg sm:text-xl font-bold">
+                Premium
+            </div>
+
+        </div>
+
+        <!-- Bottom Gray Centered Card -->
+        <div class="w-full max-w-md h-[280px] sm:h-[380px] bg-[#d9d9d9]"></div>
+
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-      <h3 class="faq-title" data-i18n="faqTitle">Ibibazo bikunze kubazwa (FAQ)</h3>
-      
-      <details class="faq-details">
-        <summary data-i18n="q1">Mind bank ni iki?</summary>
-        <p class="faq-answer" data-i18n="a1">Mind bank ni urubuga rwabugenewe rwo gufasha abanyeshuri kwitegura neza ikizamini cy'uruhushya rw'agateganyo mu Rwanda binyuze mu myitozo n'ububiko bw'ibibazo.</p>
-      </details>
+    <!-- ================= 4. FAQ SECTION ================= -->
+    <section id="questions" class="w-full max-w-7xl px-1 sm:px-4 md:px-6 mb-16 sm:mb-20">
+        
+        <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-6 sm:mb-8">
+            Frequently asked Questions
+        </h2>
 
-      <details class="faq-details">
-        <summary data-i18n="q2">Mba ngomba kwishyura ifatabuguzi ngo ngere ku bibazo vya Mind bank?</summary>
-        <p class="faq-answer" data-i18n="a2">Ushobora gutangirira ku kizamini cy'ibuntu, cyangwa ugahitamo ifatabuguzi ry'umunsi (500 RWF) cyangwa iry'ukwezi (1000 RWF) kugira ngo ubone ibintu byose.</p>
-      </details>
+        <div class="flex flex-col gap-5 sm:gap-6 text-black font-semibold text-sm sm:text-base md:text-lg">
+            
+            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                <span>What is MindBank</span>
+                <span class="text-base sm:text-lg">+</span>
+            </div>
 
-      <details class="faq-details">
-        <summary data-i18n="q3">Ni izihe nyungu zo gufata ifatabuguzi mu Mind bank?</summary>
-        <p class="faq-answer" data-i18n="a3">Ifatabuguzi ryagufasha kubona ibibazo birenga 300+, gukora ibizamini bitagira umupaka, gukurikirana amanota yawe, n'uburyo bwo kugera mu byiciro byose.</p>
-      </details>
+            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                <span>What is included in my paid subscription?</span>
+                <span class="text-base sm:text-lg">+</span>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                <span>How much is the subscription, and how can I pay?</span>
+                <span class="text-base sm:text-lg">+</span>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                <span>Do you offer a free trial and what is included</span>
+                <span class="text-base sm:text-lg">+</span>
+            </div>
+
+        </div>
+
     </section>
 
-  </main>
+    <!-- ================= 5. FOOTER SECTION ================= -->
+    <footer class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 md:p-14 flex flex-col items-center">
+        
+        <!-- Links Columns Grid -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16 text-center md:text-left">
+            
+            <!-- Column 1: About us -->
+            <div class="flex flex-col gap-3 sm:gap-4">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
+                <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
+                <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+            </div>
 
-  <!-- Full-Width Dark Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="brand-col">
-        <h3>Mindbank.rw</h3>
-        <p data-i18n="footerSlogan">Ururo rushingiye ku ntsinzi yawe</p>
-      </div>
+            <!-- Column 2: Discover -->
+            <div class="flex flex-col gap-3 sm:gap-4">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
+                <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
+                <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
+                <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
+            </div>
 
-      <div class="footer-col">
-        <h4 data-i18n="supportTitle">Ufite ikibazo & Amategeko</h4>
-        <ul>
-          <li><a href="#" data-i18n="helpFaq">Ufite ikibazo/FAQ</a></li>
-          <li><a href="#" data-i18n="privacy">Ibyerekeye amakuru yawe</a></li>
-        </ul>
-      </div>
+            <!-- Column 3: Connect with Us -->
+            <div class="flex flex-col gap-3 sm:gap-4">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
+                <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
+                <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
+                <a href="#twitter" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Twitter</a>
+            </div>
 
-      <div class="footer-col">
-        <h4 data-i18n="quickLinksTitle">Inzira zihuta</h4>
-        <ul>
-          <li><a href="index.html" data-i18n="home">Ahabanza</a></li>
-          <li><a href="rules.html" data-i18n="roadRules">Amategeko y'Umuhanda</a></li>
-          <li><a href="practice.html" data-i18n="practiceRules">Amategeko y'Imyitozo</a></li>
-        </ul>
-      </div>
+        </div>
 
-      <div class="footer-col">
-        <h4 data-i18n="contactTitle">Twandikire</h4>
-        <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
+        <!-- Copyright Note -->
+        <div class="text-gray-300 font-serif text-sm sm:text-base md:text-xl text-center">
+            © 2026 MindBank . All Rights Reserved
+        </div>
 
-    <div class="footer-bottom">
-      &copy; 2026 Mindbank.rw Amategeko yose aragengwa
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Internationalization & Hamburger Script -->
-  <script>
-    const translations = {
-      rw: {
-        pageTitle: "MINDbank Rwanda - Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo",
-        signIn: "Injira",
-        register: "IYANDIKISHE",
-        tryFree: "IGERAGEZE KU BUNTU",
-        heroTitle: "Inzira nziza yo kwitegura ikizamini cy'uruhushya rw'agateganyo",
-        benefitsIntro: "Hamwe n'ibibazo birenga 300+ n'ibisubizo byabyo, Mind bank igufasha kwongera ubumenyi bwawe:",
-        b1: "Ibibazo 20 kuri buri kizamini hamwe n'uburyo bwo kubarira amanota bikwereka ibyo wagize ukiyirangiza",
-        b2: "Ibizamini by'imyitozo biguha ibisubizo by'ukuri nyuma yo kubikora",
-        b3: "Uburyo bworoshye bwo gukoresha no kwishyura igiciro cyoroheye buri wese",
-        b4: "Ububiko bw'ibibazo buherekejwe n'ibibazo 300 n'ibisubizo byabyo",
-        exploreLink: "Shakisha mu ibyiciro byose",
-        trialTitle: "Tangira igihe cyawe cyo kugerageza ku buntu uyu munsi",
-        trialDetails: "Kuba wagera mu bubiko bw'ibibazo birenga 300+ n'ibisubizo byabyo<br>1 Ikizamini cy'imyitozo ku buntu<br>Kuba wagera ku byapa byo mu muhanda, amategeko y'umuhanda n'ibindi byinshi",
-        startTrialBtn: "Tangira kugerageza ku buntu",
-        premiumTitle: "Rwandikisha Premium",
-        premiumDetails: "Kugera ku bibazo byacu byose<br>Ibizamini by'imyitozo bitagira umupaka<br>Ububiko bw'amanota yose wakoreye ku bizamini<br>Kugera ku byiciro byose nta nkomyi",
-        dailyTag: "BYIYUNGERA BURI MUNSI",
-        payDailyBtn: "Komeza kwishyura 500 RWF",
-        monthlyTag: "BYIYUNGERA BURI KWEZI",
-        payMonthlyBtn: "Komeza kwishyura 1000 RWF",
-        faqTitle: "Ibibazo bikunze kubazwa (FAQ)",
-        q1: "Mind bank ni iki?",
-        a1: "Mind bank ni urubuga rwabugenewe rwo gufasha abanyeshuri kwitegura neza ikizamini cy'uruhushya rw'agateganyo mu Rwanda binyuze mu myitozo n'ububiko bw'ibibazo.",
-        q2: "Mba ngomba kwishyura ifatabuguzi ngo ngere ku bibazo vya Mind bank?",
-        a2: "Ushobora gutangirira ku kizamini cy'ibuntu, cyangwa ugahitamo ifatabuguzi ry'umunsi (500 RWF) cyangwa iry'ukwezi (1000 RWF) kugira ngo ubone ibintu byose.",
-        q3: "Ni izihe nyungu zo gufata ifatabuguzi mu Mind bank?",
-        a3: "Ifatabuguzi ryagufasha kubona ibibazo birenga 300+, gukora ibizamini bitagira umupaka, gukurikirana amanota yawe, n'uburyo bwo kugera mu byiciro byose.",
-        footerSlogan: "Ururo rushingiye ku ntsinzi yawe",
-        supportTitle: "Ufite ikibazo & Amategeko",
-        helpFaq: "Ufite ikibazo/FAQ",
-        privacy: "Ibyerekeye amakuru yawe",
-        quickLinksTitle: "Inzira zihuta",
-        home: "Ahabanza",
-        roadRules: "Amategeko y'Umuhanda",
-        practiceRules: "Amategeko y'Imyitozo",
-        contactTitle: "Twandikire"
-      },
-      en: {
-        pageTitle: "MINDbank Rwanda - Great start for your Provisional Driving test preparations",
-        signIn: "Sign in",
-        register: "REGISTER",
-        tryFree: "TRY FOR FREE",
-        heroTitle: "Great start for your Provisional Driving test preparations",
-        benefitsIntro: "With over 300+ questions and their answers, Mind bank brings you these benefits:",
-        b1: "20 Questions per test with a marking system that generates your result after the test",
-        b2: "Practice tests that generate rightful answers after taking tests",
-        b3: "User friendly interface and user friendly costs",
-        b4: "Question bank with 300 questions and their answers",
-        exploreLink: "Explore all categories",
-        trialTitle: "Start your free trial today",
-        trialDetails: "Access to Our Question bank with over 300+ questions and answers<br>1 Free practice test<br>Access to Road signs, Traffic rules and many more",
-        startTrialBtn: "Start free trial",
-        premiumTitle: "Premium",
-        premiumDetails: "Access to all our questions<br>Unlimited practice tests<br>Database for all marks obtained on tests<br>Premium access to all categories",
-        dailyTag: "RENEWS DAILY",
-        payDailyBtn: "Proceed to Pay 500 RWF",
-        monthlyTag: "RENEWS MONTHLY",
-        payMonthlyBtn: "Proceed to Pay 1000 RWF",
-        faqTitle: "FAQ",
-        q1: "What is Mind bank",
-        a1: "Mind bank is an online platform designed to prepare students for the Rwandan provisional driving license exam through practice tests and question banks.",
-        q2: "Will I need a subscription to access Mind bank",
-        a2: "You can start with a free trial, or choose from daily (500 RWF) or monthly (1000 RWF) subscription plans for full access.",
-        q3: "What are the benefits of subscribing to Mind bank",
-        a3: "Subscribing unlocks all 300+ questions, unlimited practice tests, performance tracking, and full access to all categories.",
-        footerSlogan: "The Bridge to your success",
-        supportTitle: "Support and Legal",
-        helpFaq: "Help/FAQ",
-        privacy: "Privacy Policy",
-        quickLinksTitle: "Quick links",
-        home: "Home",
-        roadRules: "Road Rules",
-        practiceRules: "Practice Rules",
-        contactTitle: "Contact us"
-      }
-    };
-
-    // Default language set to Kinyarwanda ('rw')
-    let currentLang = localStorage.getItem('preferredLang') || 'rw';
-
-    const langSelectBtn = document.getElementById('langSelectBtn');
-    const langMenu = document.getElementById('langMenu');
-    const currentLangLabel = document.getElementById('currentLangLabel');
-    const langOptions = document.querySelectorAll('.lang-option');
-
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-
-    function applyLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('preferredLang', lang);
-      document.documentElement.lang = lang;
-      currentLangLabel.textContent = lang.toUpperCase();
-
-      document.title = translations[lang].pageTitle;
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
-      });
-
-      langOptions.forEach(opt => {
-        if (opt.getAttribute('data-lang') === lang) {
-          opt.classList.add('active');
-        } else {
-          opt.classList.remove('active');
-        }
-      });
-    }
-
-    // Toggle Hamburger Menu
-    hamburgerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hamburgerMenu.classList.toggle('show');
-    });
-
-    // Toggle language dropdown menu
-    langSelectBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      langMenu.classList.toggle('show');
-    });
-
-    // Close menus on outside click
-    document.addEventListener('click', () => {
-      hamburgerMenu.classList.remove('show');
-      langMenu.classList.remove('show');
-    });
-
-    hamburgerMenu.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-
-    langOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        const selectedLang = opt.getAttribute('data-lang');
-        applyLanguage(selectedLang);
-        langMenu.classList.remove('show');
-      });
-    });
-
-    // Initialize with Kinyarwanda as default landing language
-    applyLanguage(currentLang);
-  </script>
 </body>
 </html>
