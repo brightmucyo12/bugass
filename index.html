@@ -184,38 +184,33 @@
 
     </section>
 
-    <!-- ================= 5. FOOTER SECTION ================= -->
+<!-- ================= 5. FOOTER SECTION ================= -->
     <footer class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 md:p-14 flex flex-col items-center">
         
         <!-- Desktop Grid (3 columns) / Mobile Layout -->
         <div class="w-full md:grid md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16">
             
-            <!-- Mobile Row: About Us (Left) & Discover (Far Right) -->
-            <div class="flex flex-row justify-between items-start w-full md:contents mb-8 md:mb-0">
-                
-                <!-- Column 1: About us -->
-                <div class="flex flex-col gap-3 sm:gap-4 text-left">
-                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
-                    <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
-                    <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
-                </div>
-
-                <!-- Column 2: Discover (Far right on mobile) -->
-                <div class="flex flex-col gap-3 sm:gap-4 text-right md:text-left">
-                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
-                    <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
-                    <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
-                    <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
-                </div>
-
+            <!-- Column 1: About us (Top Left on mobile) -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-left">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
+                <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
+                <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
             </div>
 
-            <!-- Column 3: Connect with Us (Centered on mobile, standard left-align on desktop) -->
-            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
+            <!-- Mobile Top Row Right / Desktop Column 3: Connect with Us -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-right md:text-left items-end md:items-start absolute md:relative right-6 sm:right-10 md:right-0 top-6 sm:top-10 md:top-0 md:order-3">
                 <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
                 <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
                 <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
                 <a href="#twitter" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Twitter</a>
+            </div>
+
+            <!-- Column 2: Discover (Brought down and centered on mobile, standard layout on desktop) -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start mt-8 md:mt-0 md:order-2">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
+                <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
+                <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
+                <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
             </div>
 
         </div>
@@ -226,6 +221,3 @@
         </div>
 
     </footer>
-
-</body>
-</html>
