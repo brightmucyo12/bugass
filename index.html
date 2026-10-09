@@ -30,28 +30,50 @@
     <header class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border-2 border-[#1080d0] shadow-2xl relative overflow-hidden mb-12 sm:mb-16">
         
         <!-- Navigation Bar -->
-        <nav class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <!-- Logo -->
+        <nav class="flex items-center justify-between relative w-full">
+            <!-- Logo (Extreme Top Left) -->
             <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-white hover:opacity-90 transition">
                 mindbank
             </a>
 
-            <!-- Central Nav Links Badge -->
-            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 bg-[#0a2e2b] px-4 sm:px-6 py-2 rounded-full border border-[#13423d] text-xs sm:text-sm text-gray-300">
+            <!-- Central Nav Links Badge (Desktop Only) -->
+            <div class="hidden md:flex items-center gap-6 bg-[#0a2e2b] px-6 py-2 rounded-full border border-[#13423d] text-sm text-gray-300">
                 <a href="#features" class="hover:text-white transition">Features</a>
                 <a href="#pricing" class="hover:text-white transition">Pricing</a>
                 <a href="#questions" class="hover:text-white transition">Questions</a>
                 <a href="#whats-new" class="hover:text-white transition">What's new</a>
             </div>
 
-            <!-- Header Action Buttons -->
+            <!-- Header Action Buttons (Desktop) & Hamburger Toggle (Mobile) -->
             <div class="flex items-center gap-3">
-                <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#13423d] transition">
-                    Login
-                </a>
-                <a href="register.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-xs sm:text-sm px-5 sm:px-6 py-2 rounded-full border border-[#13423d] transition">
-                    Sign up
-                </a>
+                <!-- Desktop Action Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-sm px-5 py-2 rounded-full border border-[#13423d] transition">
+                        Login
+                    </a>
+                    <a href="register.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-sm px-6 py-2 rounded-full border border-[#13423d] transition">
+                        Sign up
+                    </a>
+                </div>
+
+                <!-- Hamburger Button (Mobile Only, Same line as Mindbank) -->
+                <button id="menu-toggle" aria-label="Toggle Navigation" class="md:hidden text-white focus:outline-none p-2 rounded-lg bg-[#0b332f] border border-[#13423d]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 absolute top-12 right-0 bg-[#0a2e2b] p-4 rounded-2xl border border-[#13423d] z-50 w-48 shadow-lg text-xs text-gray-300">
+                <a href="#features" class="hover:text-white transition py-1">Features</a>
+                <a href="#pricing" class="hover:text-white transition py-1">Pricing</a>
+                <a href="#questions" class="hover:text-white transition py-1">Questions</a>
+                <a href="#whats-new" class="hover:text-white transition py-1">What's new</a>
+                <div class="pt-2 border-t border-[#13423d] flex flex-col gap-2">
+                    <a href="login.html" class="text-center bg-[#0b332f] text-gray-200 py-1.5 rounded-full border border-[#13423d]">Login</a>
+                    <a href="register.html" class="text-center bg-[#0b332f] text-gray-200 py-1.5 rounded-full border border-[#13423d]">Sign up</a>
+                </div>
             </div>
         </nav>
 
@@ -66,9 +88,6 @@
             <h1 class="max-w-3xl text-lg sm:text-2xl lg:text-3xl font-bold leading-relaxed sm:leading-relaxed text-white tracking-wide">
                 Pass your theory test on the first try. Master real provisional driving license questions with our free, bite-sized practice quizzes and hit the road sooner.
             </h1>
-
-            <!-- Central Green Placeholder Box -->
-            <div class="mt-8 sm:mt-10 w-full max-w-lg h-28 sm:h-36 md:h-44 bg-[#0a2f2b] rounded-2xl border border-[#0f3d38]"></div>
         </div>
 
     </header>
@@ -224,4 +243,17 @@
         <div class="text-gray-300 font-serif text-sm sm:text-base md:text-xl text-center">
             © 2026 MindBank . All Rights Reserved
         </div>
+    </footer>
 
+    <!-- Mobile Hamburger Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
+</html>
