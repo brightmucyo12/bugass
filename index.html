@@ -26,11 +26,11 @@
 </head>
 <body class="bg-white text-gray-900 min-h-screen py-4 px-3 sm:px-6 md:px-12 flex flex-col items-center relative">
 
-    <!-- ================= STICKY HEADER (DESKTOP & MOBILE SCROLL) ================= -->
-    <div id="sticky-header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300 transform -translate-y-full px-4 sm:px-8 md:px-12 py-3 border-b border-gray-100">
+    <!-- ================= STICKY HEADER (LOGIN / SIGN UP ON ALL SCREENS) ================= -->
+    <div id="sticky-header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300 transform -translate-y-full px-3 sm:px-8 md:px-12 py-3 border-b border-gray-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Mindbank Logo -->
-            <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-[#041a18] hover:opacity-90 transition">
+            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#041a18] hover:opacity-90 transition">
                 mindbank
             </a>
 
@@ -42,36 +42,14 @@
                 <a href="#whats-new" class="hover:text-[#059669] transition">What's new</a>
             </div>
 
-            <!-- Header Action Buttons (Desktop) & Hamburger Toggle (Mobile) -->
-            <div class="flex items-center gap-3">
-                <!-- Desktop Action Buttons -->
-                <div class="hidden md:flex items-center gap-3">
-                    <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-white text-sm px-5 py-2 rounded-full transition">
-                        Login
-                    </a>
-                    <a href="register.html" class="bg-[#059669] hover:bg-[#10b981] text-white text-sm px-6 py-2 rounded-full font-medium transition">
-                        Sign up
-                    </a>
-                </div>
-
-                <!-- Hamburger Button (Mobile Only) -->
-                <button id="sticky-menu-toggle" aria-label="Toggle Navigation" class="md:hidden text-[#041a18] focus:outline-none p-2 rounded-lg bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Sticky Mobile Dropdown -->
-        <div id="sticky-mobile-menu" class="hidden md:hidden flex-col gap-3 mt-3 bg-white p-4 rounded-2xl border border-gray-200 shadow-xl text-xs text-gray-800">
-            <a href="#features" class="hover:text-emerald-600 transition py-1 font-medium">Features</a>
-            <a href="#pricing" class="hover:text-emerald-600 transition py-1 font-medium">Pricing</a>
-            <a href="#questions" class="hover:text-emerald-600 transition py-1 font-medium">Questions</a>
-            <a href="#whats-new" class="hover:text-emerald-600 transition py-1 font-medium">What's new</a>
-            <div class="pt-2 border-t border-gray-100 flex items-center gap-2">
-                <a href="login.html" class="flex-1 text-center bg-gray-100 text-gray-800 py-2 rounded-full font-medium">Login</a>
-                <a href="register.html" class="flex-1 text-center bg-[#059669] text-white py-2 rounded-full font-medium">Sign up</a>
+            <!-- Login & Sign Up Action Buttons (Visible on Mobile & Desktop during scroll) -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-white text-xs sm:text-sm px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full transition font-medium">
+                    Login
+                </a>
+                <a href="register.html" class="bg-[#059669] hover:bg-[#10b981] text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-medium transition">
+                    Sign up
+                </a>
             </div>
         </div>
     </div>
@@ -106,7 +84,7 @@
                     </a>
                 </div>
 
-                <!-- Hamburger Button (Mobile Only, Same line as Mindbank) -->
+                <!-- Hamburger Button (Mobile Only, Same line as Mindbank in Initial Header) -->
                 <button id="menu-toggle" aria-label="Toggle Navigation" class="md:hidden text-white focus:outline-none p-2 rounded-lg bg-[#0b332f] border border-[#13423d]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -315,15 +293,7 @@
             mobileMenu.classList.toggle('flex');
         });
 
-        // Sticky Mobile Hamburger Toggle
-        const stickyMenuToggle = document.getElementById('sticky-menu-toggle');
-        const stickyMobileMenu = document.getElementById('sticky-mobile-menu');
-        stickyMenuToggle.addEventListener('click', () => {
-            stickyMobileMenu.classList.toggle('hidden');
-            stickyMobileMenu.classList.toggle('flex');
-        });
-
-        // Instant Scroll Trigger: Triggers right as soon as the top nav bar line scrolls off-screen
+        // Instant Scroll Observer Trigger
         const navBarRow = document.getElementById('nav-bar-row');
         const stickyHeader = document.getElementById('sticky-header');
 
