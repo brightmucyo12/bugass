@@ -80,7 +80,7 @@
     <header id="hero-header" class="w-full max-w-7xl bg-[#041a18] text-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border-2 border-[#1080d0] shadow-2xl relative overflow-hidden mb-12 sm:mb-16">
         
         <!-- Navigation Bar -->
-        <nav class="flex items-center justify-between relative w-full">
+        <nav id="nav-bar-row" class="flex items-center justify-between relative w-full">
             <!-- Logo (Extreme Top Left) -->
             <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-white hover:opacity-90 transition">
                 mindbank
@@ -323,13 +323,13 @@
             stickyMobileMenu.classList.toggle('flex');
         });
 
-        // Scroll Observer for Desktop & Mobile Sticky Header
-        const heroHeader = document.getElementById('hero-header');
+        // Instant Scroll Trigger: Triggers right as soon as the top nav bar line scrolls off-screen
+        const navBarRow = document.getElementById('nav-bar-row');
         const stickyHeader = document.getElementById('sticky-header');
 
         window.addEventListener('scroll', () => {
-            const heroBottom = heroHeader.offsetTop + heroHeader.offsetHeight;
-            if (window.scrollY > heroBottom - 50) {
+            const navRowBottom = navBarRow.getBoundingClientRect().bottom;
+            if (navRowBottom < 0) {
                 stickyHeader.classList.remove('-translate-y-full');
                 stickyHeader.classList.add('translate-y-0');
             } else {
