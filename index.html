@@ -234,4 +234,36 @@
                     <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
                     <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
                     <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
-                    <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-
+                    <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
+                </div>
+
+            </div>
+
+            <!-- Column 3: Connect with Us (Centered on mobile, standard left-align on desktop) -->
+            <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
+                <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
+                <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
+                <a href="#twitter" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Twitter</a>
+            </div>
+
+        </div>
+
+        <!-- Copyright Note -->
+        <div class="text-gray-300 font-serif text-sm sm:text-base md:text-xl text-center">
+            © 2026 MindBank . All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- Mobile Hamburger Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
+</html>
