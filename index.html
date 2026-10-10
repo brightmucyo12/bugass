@@ -1,316 +1,1160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mindbank</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            overflow-x: hidden;
-        }
-        /* Benefits Card Fill D9D9D9 22% & Radius 45px on desktop, slightly tighter on mobile */
-        .benefit-card {
-            background-color: rgba(217, 217, 217, 0.22);
-            border-radius: 28px;
-        }
-        @media (min-width: 768px) {
-            .benefit-card {
-                border-radius: 45px;
-            }
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#082927">
+    <link rel="icon" type="image/png" href="https://appilix.com/styles/images/favicons/favicon16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://appilix.com/styles/images/favicons/favicon32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://appilix.com/styles/images/favicons/favicon96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://appilix.com/styles/images/favicons/favicon192x192.png" sizes="192x192">
+
+    <title>Appilix — Convert Any Website into a Mobile App</title>
+    <meta name='description' content="Turn your website into a native Android or iOS app in minutes — no coding required. Push notifications, deep linking, AdMob ads and more, all from one dashboard."/>
+    <link rel="canonical" href="https://appilix.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property='og:type' content="website" />
+    <meta property='og:title' content="Appilix — Convert Any Website into a Mobile App"/>
+    <meta property='og:description' content="Turn your website into a native Android or iOS app in minutes — no coding required. Push notifications, deep linking, AdMob ads and more, all from one dashboard." />
+    <meta property="og:url" content="https://appilix.com" />
+    <meta property="og:site_name" content="Appilix" />
+    <meta property="og:image" content="https://appilix.com/styles/images/seo/cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Appilix — Convert Any Website into a Mobile App" />
+    <meta name="twitter:description" content="Turn your website into a native Android or iOS app in minutes — no coding required. Push notifications, deep linking, AdMob ads and more, all from one dashboard." />
+    <meta name="twitter:image" content="https://appilix.com/styles/images/seo/cover.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://appilix.com/styles/stylesheets/theme.css?v=1.0.0" type="text/css" media="all"/>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://appilix.com/#organization",
+  "name": "Appilix",
+  "legalName": "Appilix",
+  "url": "https://appilix.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://appilix.com/styles/images/seo/schema_logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://appilix.com/styles/images/seo/cover.png",
+  "description": "Appilix is a SaaS platform that converts any website into a native Android and iOS mobile app without writing a single line of code. Features include Firebase push notifications, AdMob ad integration, biometric authentication, deep linking, navigation drawers, and custom splash screens.",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Dhaka, Bangladesh"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Ferdousur Rahman Sarker",
+    "jobTitle": "Owner & Founder",
+    "worksFor": {
+      "@id": "https://appilix.com/#organization"
+    }
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@appilix.com",
+      "url": "https://appilix.com/contact-us",
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday",
+          "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+8801327377166",
+      "url": "https://wa.me/8801327377166",
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday",
+          "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/appilix",
+    "https://www.linkedin.com/company/appilix",
+    "https://www.youtube.com/channel/UCMnzi1RKEQ0FStSPYEJ_L4Q",
+    "https://www.trustpilot.com/review/appilix.com"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://appilix.com/#website",
+  "name": "Appilix",
+  "url": "https://appilix.com",
+  "description": "Convert your website into an Android or iOS mobile app without any coding. Build, customize and publish in minutes.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@id": "https://appilix.com/#organization"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://appilix.com/#software",
+  "name": "Appilix — Website to App Converter",
+  "url": "https://appilix.com",
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "Mobile App Builder",
+  "operatingSystem": "Web (Browser-based), Android, iOS",
+  "browserRequirements": "Requires JavaScript. Works on any modern browser.",
+  "description": "Appilix is a no-code SaaS platform that converts any website URL into a fully functional Android or iOS mobile app. Users enter their website address, customize the app with a logo, splash screen, navigation, and native modules (push notifications, AdMob ads, biometric auth, deep links, Google Sign-in, custom CSS/JS), then build and download the app in under 5 minutes — no Mac, no Xcode, no Android Studio required.",
+  "screenshot": "https://appilix.com/styles/images/seo/cover.png",
+  "featureList": [
+    "Firebase Push Notifications",
+    "AdMob Ad Integration",
+    "Biometric Authentication",
+    "Native Google Sign-in",
+    "Deep Link Integration",
+    "Navigation Drawer Menu",
+    "Bottom Navigation Bar",
+    "Customizable Splash Screen",
+    "Custom CSS and JavaScript Injection",
+    "Play Store Releasable APK",
+    "App Store Releasable IPA",
+    "Unlimited App Rebuilds",
+    "No-code App Builder",
+    "Browser-based Builder (no PC required)",
+    "App Publishing Service (Premium)",
+    "App Testing Service (Premium)"
+  ],
+  "softwareVersion": "Latest",
+  "releaseNotes": "https://appilix.com/changelogs",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Android Free Plan",
+      "description": "Build your first Android app for free and explore core features for 15 days. Includes 15-day trial, core features, basic support, limited app users.",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 15,
+        "unitCode": "DAY"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Android Standard Plan",
+      "description": "One-time payment. Unlimited app rebuilds and active users. All integration modules, priority email support, self app publishing.",
+      "price": "119.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "119.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "description": "One-time payment, no renewal"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Android Premium Plan",
+      "description": "One-time payment. Unlimited rebuilds and users. All modules, online meeting support, app publishing service, app testing service.",
+      "price": "229.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "229.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "description": "One-time payment, no renewal"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "iOS Free Plan",
+      "description": "Build your first iOS app for free and explore core features for 15 days. Includes 15-day trial, core features, basic support, limited app users.",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 15,
+        "unitCode": "DAY"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "iOS Standard Plan",
+      "description": "One-time payment. Unlimited app rebuilds and active users. All integration modules, priority email support, self app publishing.",
+      "price": "149.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "149.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "description": "One-time payment, no renewal"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "iOS Premium Plan",
+      "description": "One-time payment. Unlimited rebuilds and users. All modules, online meeting support, app publishing service, app testing service.",
+      "price": "269.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "269.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "description": "One-time payment, no renewal"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Standard Combo Pack (Android + iOS)",
+      "description": "1 Android Standard Plan + 1 iOS Standard Plan. Self app publishing, priority email support. Save $39 vs buying separately.",
+      "price": "229.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "CompoundPriceSpecification",
+        "price": "229.00",
+        "priceCurrency": "USD",
+        "description": "Bundle price. Regular combined price $268.00. Save $39.00."
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Combo Pack (Android + iOS)",
+      "description": "1 Android Premium Plan + 1 iOS Premium Plan. App publishing service, app testing, priority email support, online meeting support. Save $59 vs buying separately.",
+      "price": "439.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://appilix.com/pricing",
+      "priceSpecification": {
+        "@type": "CompoundPriceSpecification",
+        "price": "439.00",
+        "priceCurrency": "USD",
+        "description": "Bundle price. Regular combined price $498.00. Save $59.00."
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "65",
+    "reviewCount": "65"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "name": "Best web to app converter",
+      "author": {
+        "@type": "Person",
+        "name": "Fiona"
+      },
+      "datePublished": "2024-04-06",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "I am super impressed with Appilix. They have easy step-by-step videos to follow, all less than a couple of minutes. I already had a website and ATS portal that was only accessible online. I have now been able to have my ATS as an app just by supplying my website link. Reached out to customer service twice and they came back to me super quickly, within hours, and both times were able to resolve my query.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trustpilot",
+        "url": "https://www.trustpilot.com/review/appilix.com"
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Appilix is a very good website to App converter",
+      "author": {
+        "@type": "Person",
+        "name": "Winox Com"
+      },
+      "datePublished": "2023-11-12",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Appilix is a very good website to app conversion software. It creates a beautiful and attractive app with a variety of features. I have been able to create an Android and iOS app in a few seconds and the customer service is very good — they were side by side with me to solve all the problems that arose during submission to the Play Store and App Store.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trustpilot",
+        "url": "https://www.trustpilot.com/review/appilix.com"
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "The best app builder I have ever used",
+      "author": {
+        "@type": "Person",
+        "name": "Khaled Mahieddine"
+      },
+      "datePublished": "2025-01-30",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Appilix is the best software I've found — quality, cheapest price, and they offer a lifetime plan. They also helped me to publish the app on the Apple Store. I am happy I found appilix.com. Thank you so much.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trustpilot",
+        "url": "https://www.trustpilot.com/review/appilix.com"
+      }
+    }
+  ],
+  "provider": {
+    "@id": "https://appilix.com/#organization"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://appilix.com/#webpage",
+  "url": "https://appilix.com",
+  "name": "Appilix — Convert Your Website into a Mobile App Without Coding",
+  "description": "Appilix is the ultimate no-code solution for converting your website into an Android or iOS mobile app. Enter your URL, customize, and build in under 5 minutes.",
+  "isPartOf": {
+    "@id": "https://appilix.com/#website"
+  },
+  "about": {
+    "@id": "https://appilix.com/#software"
+  },
+  "publisher": {
+    "@id": "https://appilix.com/#organization"
+  },
+  "inLanguage": "en-US",
+  "dateModified": "2026-05-01",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://appilix.com"
+      }
+    ]
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I turn a website into an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply enter your website URL, customize your app with your logo, splash screen, and colors, then hit build. No coding or technical skills required. You can test it on a real device before publishing to Google Play or the App Store."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert my website to app for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Appilix offers a 15-day free trial where you can access core features and test the platform. After the trial ends, the app will still open but prompt users to upgrade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert my WordPress website into an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Appilix works with any website regardless of how it was built — WordPress, Shopify, Wix, or any custom platform. If your site has a URL, Appilix can turn it into a mobile app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert my website to an iOS app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and you don't need a Mac or Apple device to do it. Appilix builds the iOS app on its own servers and uploads it directly to App Store Connect on your behalf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my app stay up to date with my site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, always. Since Appilix loads your website inside the app, any update you make to your website — content, design, or features — is instantly reflected in the app with zero extra work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this just a wrapper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appilix does more than wrap your website. On top of displaying your site in a mobile app, it adds powerful native features like push notifications, bottom navigation, navigation drawer, AdMob ads, biometric authentication, and more. You can even control which parts of your website appear in the app using custom CSS and JavaScript."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Web to APK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web to APK is the process of converting a website into an Android app package (.APK) — the file format used to install apps on Android devices. Instead of building an app from scratch, tools like Appilix take your existing website URL and package it into a fully installable Android app, ready for the Play Store or direct distribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a developer account to publish my app on Google Play or App Store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you must have your own active developer account to publish your app — a Google Play Developer account for Android and an Apple Developer account for iOS. Appilix builds the app for you, but the publishing happens under your own account so you retain full ownership."
+      }
+    }
+  ]
+}</script>
+    <script>window.HOST = "https://appilix.com";</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPM1G6T3JH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPM1G6T3JH');
+    </script>
 </head>
-<body class="bg-white text-gray-900 min-h-screen p-2 sm:p-4 md:p-6 flex flex-col items-center relative">
 
-    <!-- ================= STICKY HEADER (LOGIN / SIGN UP ON ALL SCREENS) ================= -->
-    <div id="sticky-header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300 transform -translate-y-full px-4 sm:px-8 md:px-12 py-3 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Mindbank Logo -->
-            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#041a18] hover:opacity-90 transition">
-                mindbank
-            </a>
-
-            <!-- Central Nav Links Badge (Desktop Only) -->
-            <div class="hidden md:flex items-center gap-6 bg-gray-100 px-6 py-2 rounded-full border border-gray-200 text-sm text-gray-700 font-medium">
-                <a href="#features" class="hover:text-[#059669] transition">Features</a>
-                <a href="#pricing" class="hover:text-[#059669] transition">Pricing</a>
-                <a href="#questions" class="hover:text-[#059669] transition">Questions</a>
-                <a href="#whats-new" class="hover:text-[#059669] transition">What's new</a>
+<body>
+<!--    Appilix Navigation Bar-->
+<nav class="appilix_navbar dark_nav">
+    <div class="appilix_container_navbar">
+        <div class="navbar_content">
+            <!--To Control Mobile View-->
+            <div class="navbar_mobile">
+                <a href="https://appilix.com" class="appilix_navbar_logo">
+                    <img class="dark_nav_logo" src="https://appilix.com/styles/images/logos/appilix_logo_light.svg" alt="Appilix Logo">
+                    <img class="primary_nav_logo" src="https://appilix.com/styles/images/logos/appilix_logo.svg" alt="Appilix Logo">
+                </a>
+                <div class="navbar_toggle_btn"></div>
             </div>
-
-            <!-- Login & Sign Up Action Buttons (Visible on Mobile & Desktop during scroll) -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-white text-xs sm:text-sm px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full transition font-medium">
-                    Login
-                </a>
-                <a href="register.html" class="bg-[#059669] hover:bg-[#10b981] text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-medium transition">
-                    Sign up
-                </a>
+            <!--Navigation Menu-->
+            <div class="navbar_options">
+                <div class="navbar_menu">
+                    <a class="navbar_menu_item " href="https://appilix.com/features">Features</a>
+                    <a class="navbar_menu_item " href="https://appilix.com/pricing">Pricing</a>
+                    <a class="navbar_menu_item " href="https://appilix.com/faq">Questions</a>
+                    <a class="navbar_menu_item " href="https://appilix.com/changelogs">What’s New</a>
+                </div>
+                <div class="nav_buttons">
+                    <a href="https://appilix.com/contact-us" class="button contact_btn">Contact</a>
+                    <a href="https://appilix.com/dashboard" class="button account_btn">Account</a>
+                </div>
             </div>
         </div>
     </div>
+</nav>
 
-    <!-- ================= 1. HERO SECTION (FULL SCREEN WITH ROUNDED EDGES & SMALL MARGIN) ================= -->
-    <header id="hero-header" class="w-full bg-[#041a18] text-white p-5 sm:p-8 md:p-12 border-2 border-[#1080d0] rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden mb-12 sm:mb-16">
-        
-        <div class="max-w-7xl mx-auto w-full">
-            <!-- Navigation Bar -->
-            <nav id="nav-bar-row" class="flex items-center justify-between relative w-full">
-                <!-- Logo (Extreme Top Left) -->
-                <a href="index.html" class="text-2xl sm:text-3xl font-bold tracking-tight text-white hover:opacity-90 transition">
-                    mindbank
-                </a>
-
-                <!-- Central Nav Links Badge (Desktop Only) -->
-                <div class="hidden md:flex items-center gap-6 bg-[#0a2e2b] px-6 py-2 rounded-full border border-[#13423d] text-sm text-gray-300">
-                    <a href="#features" class="hover:text-white transition">Features</a>
-                    <a href="#pricing" class="hover:text-white transition">Pricing</a>
-                    <a href="#questions" class="hover:text-white transition">Questions</a>
-                    <a href="#whats-new" class="hover:text-white transition">What's new</a>
-                </div>
-
-                <!-- Header Action Buttons (Desktop) & Hamburger Toggle (Mobile) -->
-                <div class="flex items-center gap-3">
-                    <!-- Desktop Action Buttons -->
-                    <div class="hidden md:flex items-center gap-3">
-                        <a href="login.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-sm px-5 py-2 rounded-full border border-[#13423d] transition">
-                            Login
-                        </a>
-                        <a href="register.html" class="bg-[#0b332f] hover:bg-[#0f403b] text-gray-200 text-sm px-6 py-2 rounded-full border border-[#13423d] transition">
-                            Sign up
-                        </a>
+<!--Appilix Landing Hero Section-->
+<section class="appilix_hero">
+    <div class="hero_wrapper">
+        <div class="appilix_container_hero">
+            <span class="hero_tag">Convert Website to App</span>
+            <h1 class="hero_title">Convert Your Website to Mobile App Within Minutes</h1>
+            <p class="hero_description">Convert your website to an app without developers using the leading no-code app builder. Create Android & iOS apps in minutes—no coding required.</p>
+            <div class="hero_input_area">
+                <textarea id="home_page_appilix_hero" class="animate-placeholder" placeholder="Enter your website URL..." rows="4"></textarea>
+                <div class="hero_input_buttons">
+                    <div class="platform_selector">
+                        <label><input type="radio" name="hero_platform" value="android" checked><span>Android</span></label>
+                        <label><input type="radio" name="hero_platform" value="ios"><span>iOS</span></label>
                     </div>
-
-                    <!-- Hamburger Button (Mobile Only) -->
-                    <button id="menu-toggle" aria-label="Toggle Navigation" class="md:hidden text-white focus:outline-none p-2 rounded-lg bg-[#0b332f] border border-[#13423d]">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                    <button class="go_button" onclick="analyzeWebsite(`home_page_appilix_hero`, `loading`, null, this, `hero_platform`)"></button>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <!-- Mobile Menu Dropdown -->
-                <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 absolute top-12 right-0 bg-[#0a2e2b] p-4 rounded-2xl border border-[#13423d] z-50 w-48 shadow-lg text-xs text-gray-300">
-                    <a href="#features" class="hover:text-white transition py-1">Features</a>
-                    <a href="#pricing" class="hover:text-white transition py-1">Pricing</a>
-                    <a href="#questions" class="hover:text-white transition py-1">Questions</a>
-                    <a href="#whats-new" class="hover:text-white transition py-1">What's new</a>
-                    <div class="pt-2 border-t border-[#13423d] flex flex-col gap-2">
-                        <a href="login.html" class="text-center bg-[#0b332f] text-gray-200 py-1.5 rounded-full border border-[#13423d]">Login</a>
-                        <a href="register.html" class="text-center bg-[#0b332f] text-gray-200 py-1.5 rounded-full border border-[#13423d]">Sign up</a>
+
+<!--Appilix Trusted By Companies Section-->
+<section class="appilix_trusted_by">
+    <div class="appilix_container">
+        <div class="section_content">
+            <h2 class="section_title">Built on <b>anything.</b> Works with Appilix.</h2>
+            <div class="company_logo_container">
+                <div class="logo_slider">
+                    <img src="https://appilix.com/styles/images/theme/brands/shopify.svg" alt="Shopify Logo">
+<img src="https://appilix.com/styles/images/theme/brands/wordpress.svg" alt="WordPress Logo">
+<img src="https://appilix.com/styles/images/theme/brands/webflow.svg" alt="Webflow Logo">
+<img src="https://appilix.com/styles/images/theme/brands/bubble.svg" alt="bubble Logo">
+<img src="https://appilix.com/styles/images/theme/brands/react.svg" alt="React Logo">
+<img src="https://appilix.com/styles/images/theme/brands/lovable.svg" alt="Lovable Logo">
+<img src="https://appilix.com/styles/images/theme/brands/wix.svg" alt="Wix Logo">
+<img src="https://appilix.com/styles/images/theme/brands/vuejs.svg" alt="Vue.js Logo">
+<img src="https://appilix.com/styles/images/theme/brands/framer.svg" alt="Framer Logo">                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Appilix 3 Steps Section-->
+<section class="appilix_start_steps">
+    <div class="appilix_container">
+        <div class="section_header">
+            <span class="section_badge">How Appilix Works</span>
+            <h2 class="section_title">Turn your website into a mobile app in 3 simple steps</h2>
+        </div>
+        <div class="section_body">
+            <div class="step_card step_1">
+                <div class="card_img"></div>
+                <div class="card_details">
+                    <h3>Enter website URL</h3>
+                    <p>We detect your site’s structure and build the app foundation automatically.</p>
+                </div>
+            </div>
+            <div class="step_card step_2">
+                <div class="card_img"></div>
+                <div class="card_details">
+                    <h3>Customize & Preview</h3>
+                    <p>Add logo, colors, splash screen, tabs or drawer navigation, and even custom CSS & JS.</p>
+                </div>
+            </div>
+            <div class="step_card step_3">
+                <div class="card_img"></div>
+                <div class="card_details">
+                    <h3>Build & Download</h3>
+                    <p>Get Android APK/AAB and iOS build files, ready to submit to Google Play or Apple App Store</p>
+                </div>
+            </div>
+        </div>
+        <span class="section_footer">
+            <b>⚡ 5 minutes of setup</b>
+            vs. months of developer work
+        </span>
+    </div>
+</section>
+
+<!--Appilix In Action Or Appilix Demo Section-->
+<section class="appilix_in_action">
+    <div class="action_wrapper">
+        <div class="appilix_container">
+            <div class="section_header">
+                <span class="section_badge">See Appilix in Action</span>
+                <h2 class="section_title">Build Your Mobile App in Just 5 Minutes!</h2>
+                <p class="short_description">Watch how simple it is to turn your website into a fully functional Android and iOS app. No coding, no developers, no waiting.</p>
+            </div>
+            <div class="section_body">
+                <div class="video_thumbnail">
+                    <div class="play_button"></div>
+                </div>
+                <iframe
+                        class="intro_video"
+                        src=""
+                >
+                </iframe>
+            </div>
+            <div class="section_footer">
+                <div class="benefit_card">
+                    <div class="card_icon card_1"></div>
+                    <h4>Fast Web to App Conversion</h4>
+                    <p>Turn your website into a mobile app in 5 minutes. Enjoy a fast, browser-based builder.</p>
+                </div>
+                <div class="benefit_card">
+                    <div class="card_icon card_2"></div>
+                    <h4>Fully Customizable Features</h4>
+                    <p>Personalize your web to app, including splash screens, navigation without coding.</p>
+                </div>
+                <div class="benefit_card">
+                    <div class="card_icon card_3"></div>
+                    <h4>Access from Anywhere</h4>
+                    <p>No need for Mac or Windows PC! Build & customize your website to app anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Achievements of Appilix-->
+<section class="appilix_achievements">
+    <div class="appilix_container">
+        <h2 class="section_title">Creators & Businesses Worldwide Rely on Appilix Every day</h2>
+        <div class="achieve_cards">
+            <div class="card c_1">
+                <h3 data-counter="140000" data-suffix="+" data-format="comma">140,000+</h3>
+                <p>Apps Created with Appilix</p>
+            </div>
+            <div class="card c_2">
+                <h3 data-counter="50" data-suffix="+">50+</h3>
+                <p>Countries Reached</p>
+            </div>
+            <div class="card c_3">
+                <h3 data-counter="100" data-suffix="k+">100k+</h3>
+                <p>Active Users Engaged</p>
+            </div>
+            <div class="card c_4">
+                <h3 data-counter="24" data-suffix=" hours">24 hours</h3>
+                <p>Guaranteed Support Reply</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Appilix CTA Section-->
+<section class="appilix_cta_preview">
+    <div class="appilix_container">
+        <div class="wrapper">
+            <h2 class="section_title">See it before You Commit</h2>
+            <p class="short_description">Paste your URL. Get a live app preview with nav drawer, splash screen, and brand colors—in seconds.</p>
+            <div class="cta_buttons">
+                <input id="home_page_appilix_cta_preview_1" type="text" placeholder="Turn website into an app" />
+                <button class="" onclick="analyzeWebsite(`home_page_appilix_cta_preview_1`, `loading`, `Please wait`, this)">Try the preview</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Appilix Hero Feature Section-->
+<section class="appilix_features">
+    <div class="appilix_container">
+        <div class="section_header">
+            <h2 class="section_title">Powerful Features That Make Your App Stand Out</h2>
+            <p class="short_description">Appilix combines advanced functionality and a no-code approach to convert your website into a fully native mobile app.</p>
+        </div>
+        <div class="section_body">
+            <div class="feature_card card_1">
+                <div class="card_content">
+                    <div class="card_icon"></div>
+                    <h3>One-Click Website to App Conversion</h3>
+                    <p>Turn your existing site into a mobile app instantly. No developers, no delays.</p>
+                    <a href="https://appilix.com/dashboard" class="card_btn bg_color_orange">Get Started</a>
+                </div>
+                <img class="card_img" src="https://appilix.com/styles/images/theme/features/appilix_landing_feature_img_1.svg" alt="Feature Image">
+            </div>
+            <div class="feature_card card_2">
+                <div class="card_content">
+                    <div class="card_icon"></div>
+                    <h3>Push Notifications that Drive Action</h3>
+                    <p>Send real-time updates to your users and keep them coming back.</p>
+                    <a href="https://appilix.com/dashboard" class="card_btn bg_color_green_primary">Get Started</a>
+                </div>
+                <img class="card_img" src="https://appilix.com/styles/images/theme/features/appilix_landing_feature_img_2.svg" alt="Feature Image">
+            </div>
+            <div class="feature_card card_3">
+                <div class="card_content">
+                    <div class="card_icon"></div>
+                    <h3>Bottom Navigation Menu</h3>
+                    <p>Provide quick access to important sections with familiar bottom tabs.</p>
+                    <a href="https://appilix.com/dashboard" class="card_btn bg_color_error">Get Started</a>
+                </div>
+                <img class="card_img" src="https://appilix.com/styles/images/theme/features/appilix_landing_feature_img_3.svg" alt="Feature Image">
+            </div>
+        </div>
+        <div class="section_footer">
+            <a href="https://appilix.com/features" class="button btn_1">View All Features</a>
+            <a href="https://appilix.com/contact-us" class="button btn_2">Contact us</a>
+        </div>
+    </div>
+</section>
+
+<!--Why Business Chose Appilix-->
+<section class="appilix_why">
+    <div class="section_card">
+        <div class="appilix_container">
+            <div class="section_header">
+                <h2 class="section_title">Why Businesses Choose Appilix?</h2>
+                <p class="short_description">The Web-to-App Platform That Solves Real Mobile Challenges</p>
+            </div>
+            <div class="section_body">
+                <div class="card challenges">
+                    <span>The Challenge</span>
+                    <h3>Other Platforms</h3>
+                    <ul>
+                        <li>Low engagement on mobile websites</li>
+                        <li>Generic mobile experience</li>
+                        <li>No developers or tight budgets</li>
+                        <li>Worries about website updates</li>
+                        <li>Unsure before committing</li>
+                    </ul>
+                </div>
+                <div class="card solutions">
+                    <span>The Solution</span>
+                    <h3>With Appilix</h3>
+                    <ul>
+                        <li>Re-engage users with push notifications</li>
+                        <li>Deliver native-like navigation & smooth performance</li>
+                        <li>Build apps in minutes with ready Android & iOS files</li>
+                        <li>Keep content fresh with live sync</li>
+                        <li>Preview your app instantly with your URL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="appilix_testimonials">
+    <div class="appilix_container">
+        <h2 class="section_title">Proof That Appilix Works</h2>
+        <div class="testimony_cards">
+            <div class="t_card card_1">
+                <div class="comment">
+                    <span class="title">Faster Sales Growth</span>
+                    <p class="testimony">"I converted my Shopify store into an app in under 10 minutes. Appilix made it simple, and our sales went up immediately."</p>
+                </div>
+                <div class="user_details">
+                    <div class="user_img">
+                        <img src="https://appilix.com/styles/images/theme/people/appilix_user_profile_1.png" alt="User Image">
+                    </div>
+                    <div class="user_info">
+                        <h4 class="user_name">Maria</h4>
+                        <span class="user_role">E-commerce Owner</span>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Hero Content Area -->
-            <div class="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center text-center">
-                <!-- Subtitle Badge -->
-                <div class="bg-[#072a26] text-[#2dd4bf] text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full border border-[#10423c] mb-6 sm:mb-8 font-medium max-w-full">
-                    Prepare for your Provisional Driving License Today
+            </div>
+            <div class="t_card card_2">
+                <div class="comment">
+                    <span class="title">Beginner-friendly Experience</span>
+                    <p class="testimony">"Even without technical skills, I built an app for my blog. The support team guided me step by step."</p>
                 </div>
-
-                <!-- Main Heading -->
-                <h1 class="max-w-3xl text-lg sm:text-2xl lg:text-3xl font-bold leading-relaxed sm:leading-relaxed text-white tracking-wide">
-                    Pass your theory test on the first try. Master real provisional driving license questions with our free, bite-sized practice quizzes and hit the road sooner.
-                </h1>
-
-                <!-- Clickable Central Call-to-Action Box (Vibrant Green) -->
-                <a href="register.html" class="mt-8 sm:mt-10 w-full max-w-lg h-24 sm:h-32 md:h-36 bg-[#059669] hover:bg-[#10b981] active:scale-95 rounded-2xl border-2 border-[#34d399] shadow-xl shadow-[#059669]/30 transition-all duration-200 ease-in-out flex items-center justify-center p-4 group cursor-pointer">
-                    <span class="text-white font-bold text-xl sm:text-2xl md:text-3xl tracking-wide flex items-center gap-3 drop-shadow-md">
-                        Start Free Practice Test
-                        <svg class="w-7 h-7 sm:w-8 sm:h-8 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </span>
-                </a>
-            </div>
-        </div>
-
-    </header>
-
-    <!-- ================= 2. BENEFITS SECTION ================= -->
-    <main class="w-full max-w-7xl px-3 sm:px-6 md:px-12 mb-16 sm:mb-20">
-        
-        <!-- Section Intro Heading -->
-        <h2 class="text-base sm:text-lg md:text-xl font-semibold text-black mb-6">
-            With over 300+ questions and their answers, Mind bank brings you these benefits:
-        </h2>
-
-        <!-- Cards Container -->
-        <div class="flex flex-col gap-4 sm:gap-6">
-
-            <!-- Card 1 (15 words) -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        Take twenty-question practice tests with real-time automated scoring and immediate detailed performance breakdown.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 2 (15 words) -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        Enjoy an intuitive, affordable platform featuring a dynamic dashboard that visually tracks daily study progress.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 3 (15 words) -->
-            <div class="benefit-card p-5 sm:p-8 md:p-10 text-black text-sm sm:text-base md:text-lg leading-relaxed">
-                <div class="flex items-start gap-2.5 sm:gap-3">
-                    <span class="text-lg sm:text-xl leading-none mt-1">&#9679;</span>
-                    <p class="m-0">
-                        Access over three hundred meticulously structured questions with instant feedback to guarantee exam success.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </main>
-
-    <!-- ================= 3. PRICING MODEL SECTION ================= -->
-    <section id="pricing" class="w-full max-w-7xl px-3 sm:px-6 md:px-12 mb-16 sm:mb-20 flex flex-col items-center">
-        
-        <!-- Section Header -->
-        <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-black text-center mb-6 sm:mb-8">
-            Pricing Model
-        </h2>
-
-        <!-- Pricing Cards Grid -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            
-            <!-- Basic Card -->
-            <div class="bg-[#fde2e4] border-2 border-[#1080d0] h-[320px] sm:h-[420px] p-6 text-[#726367] text-lg sm:text-xl font-normal">
-                Basic
-            </div>
-
-            <!-- Standard Card -->
-            <div class="bg-[#c8f7c5] h-[320px] sm:h-[420px] p-6 text-[#5b8758] text-lg sm:text-xl font-normal">
-                Standard
-            </div>
-
-            <!-- Premium Card -->
-            <div class="bg-[#9eeaf3] h-[320px] sm:h-[420px] p-6 text-[#356e75] text-lg sm:text-xl font-bold">
-                Premium
-            </div>
-
-        </div>
-
-        <!-- Bottom Gray Centered Card -->
-        <div class="w-full max-w-md h-[280px] sm:h-[380px] bg-[#d9d9d9]"></div>
-
-    </section>
-
-    <!-- ================= 4. FAQ SECTION ================= -->
-    <section id="questions" class="w-full max-w-7xl px-3 sm:px-6 md:px-12 mb-16 sm:mb-20">
-        
-        <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-6 sm:mb-8">
-            Frequently asked Questions
-        </h2>
-
-        <div class="flex flex-col gap-5 sm:gap-6 text-black font-semibold text-sm sm:text-base md:text-lg">
-            
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>What is MindBank</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>What is included in my paid subscription?</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>How much is the subscription, and how can I pay?</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
-                <span>Do you offer a free trial and what is included</span>
-                <span class="text-base sm:text-lg">+</span>
-            </div>
-
-        </div>
-
-    </section>
-
-   <!-- ================= 5. FOOTER SECTION ================= -->
-    <footer class="w-full bg-[#041a18] text-white p-6 sm:p-10 md:p-14 flex flex-col items-center rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem]">
-        
-        <div class="max-w-7xl w-full flex flex-col items-center">
-            <!-- Desktop Grid (3 columns) / Mobile Layout -->
-            <div class="w-full md:grid md:grid-cols-3 gap-8 md:gap-16 mb-12 sm:mb-16">
-                
-                <!-- Mobile Row: About Us (Left) & Discover (Far Right) -->
-                <div class="flex flex-row justify-between items-start w-full md:contents mb-8 md:mb-0">
-                    
-                    <!-- Column 1: About us -->
-                    <div class="flex flex-col gap-3 sm:gap-4 text-left">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-serif">About us</h3>
-                        <a href="#privacy" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Privacy Policy</a>
-                        <a href="#terms" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Terms and Conditions</a>
+                <div class="user_details">
+                    <div class="user_img">
+                        <img src="https://appilix.com/styles/images/theme/people/appilix_user_profile_2.png" alt="User Image">
                     </div>
-
-                    <!-- Column 2: Discover (Far right on mobile) -->
-                    <div class="flex flex-col gap-3 sm:gap-4 text-right md:text-left">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Discover</h3>
-                        <a href="#faq" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">FAQ</a>
-                        <a href="#features" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Features</a>
-                        <a href="#pricing" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Pricing</a>
+                    <div class="user_info">
+                        <h4 class="user_name">Alex</h4>
+                        <span class="user_role">Blogger</span>
                     </div>
-
                 </div>
-
-                <!-- Column 3: Connect with Us (Centered on mobile, standard left-align on desktop) -->
-                <div class="flex flex-col gap-3 sm:gap-4 text-center md:text-left items-center md:items-start">
-                    <h3 class="text-lg sm:text-xl md:text-2xl font-serif">Connect with Us</h3>
-                    <a href="#facebook" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Facebook</a>
-                    <a href="#instagram" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Instagram</a>
-                    <a href="#twitter" class="text-base sm:text-lg md:text-xl font-serif hover:text-gray-300 transition">Twitter</a>
-                </div>
-
             </div>
-
-            <!-- Copyright Note -->
-            <div class="text-gray-300 font-serif text-sm sm:text-base md:text-xl text-center">
-                © 2026 MindBank . All Rights Reserved
+            <div class="t_card card_3">
+                <div class="comment">
+                    <span class="title">Time Saved, Users Engaged</span>
+                    <p class="testimony">“Appilix saved us weeks of development time, and our users love the push notifications. Highly recommend!"</p>
+                </div>
+                <div class="user_details">
+                    <div class="user_img">
+                        <img src="https://appilix.com/styles/images/theme/people/appilix_user_profile_3.png" alt="User Image">
+                    </div>
+                    <div class="user_info">
+                        <h4 class="user_name">Roderick</h4>
+                        <span class="user_role">SaaS Founder</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- Interactive Scripts -->
-    <script>
-        // Hero Mobile Hamburger Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
 
-        // Instant Scroll Observer Trigger
-        const navBarRow = document.getElementById('nav-bar-row');
-        const stickyHeader = document.getElementById('sticky-header');
+<!--<section class="appilix_cta_community">
+    <div class="appilix_container">
+        <div class="community_card">
+            <h2 class="section_title">Join 5,000+ Creators on Discord</h2>
+            <p class="short_description">Get instant support, tips, and feedback from fellow Appilix users.</p>
+            <a href="#" class="button">Join Discord</a>
+        </div>
+    </div>
+</section>-->
 
-        window.addEventListener('scroll', () => {
-            const navRowBottom = navBarRow.getBoundingClientRect().bottom;
-            if (navRowBottom < 0) {
-                stickyHeader.classList.remove('-translate-y-full');
-                stickyHeader.classList.add('translate-y-0');
-            } else {
-                stickyHeader.classList.remove('translate-y-0');
-                stickyHeader.classList.add('-translate-y-full');
-            }
-        });
-    </script>
+
+<div class="design_blur trust_bar"></div>
+<section class="appilix_trust_factors">
+
+    <div class="appilix_container">
+        <h2 class="section_title">Your App, Backed by Our Promise</h2>
+        <div class="fact_cards">
+            <div class="f_card c_1">
+                <div class="card_icon"></div>
+                <h3>Secure payments via Paddle & Payoneer</h3>
+            </div>
+            <div class="f_card c_2">
+                <div class="card_icon"></div>
+                <h3>15-day all-feature trial before purchase</h3>
+            </div>
+            <div class="f_card c_3">
+                <div class="card_icon"></div>
+                <h3>No hidden fees, lifetime access options</h3>
+            </div>
+            <div class="f_card c_4">
+                <div class="card_icon"></div>
+                <h3>Real human support within 24h</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="appilix_pricing ">
+    <div class="wrapper">
+        <div class="appilix_container">
+            <div class="section_header">
+                <span class="section_badge">Pricing Model</span>
+                <h2 class="section_title">Transparent Pricing, No Surprises</h2>
+                <p class="short_description">Simple, Flexible Plans to Turn Your Website into a Mobile App-No Coding Required.</p>
+            </div>
+            <div class="section_body">
+                <div class="category_selector">
+                    <div class="plan_tabs">
+                        <span class="tab_item active_tab" data-tab="android_plans">Android Plans</span>
+                        <span class="tab_item" data-tab="ios_plans">iOS Plans</span>
+                    </div>
+                </div>
+                <div class="plan_cards">
+                    <!--                    Android Pricing Cards-->
+                    <div class="categories android_plans" >
+                        <div class="plan_card free_plan">
+                            <div class="plan_title">
+                                <h4>Free</h4>
+                            </div>
+                            <h3>$0.00</h3>
+                            <p>Let’s build your first Android app for free and explore core features for 15 days.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Start Free Trial</span></a>
+                            <ul>
+                                <li>1 Android Application</li>
+                                <li>15-day Trial</li>
+                                <li>Limited App Rebuilds</li>
+                                <li>Limited App Users</li>
+                            </ul>
+                        </div>
+                        <div class="plan_card standard_plan ">
+                            <div class="plan_title">
+                                <h4>Standard</h4>
+                                <div class="badge">Most Popular</div>
+                            </div>
+                            <h3>$119.00</h3>
+                            <p>Standard plan with unlimited builds and active users.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Purchase Now</span></a>
+                            <ul>
+                                <li>1 Android Application</li>
+                                <li>One Time Payment</li>
+                                <li>Unlimited App Rebuilds</li>
+                                <li>Unlimited App Users</li>
+                                <li>No Appilix Branding</li>
+                                <li>All Integration Modules</li>
+                                <li>Play Store Publishable</li>
+                                <li>Email Support</li>
+                            </ul>
+                        </div>
+                        <div class="plan_card premium_plan ">
+                            <div class="plan_title">
+                                <h4>Premium</h4>
+                            </div>
+                            <h3>$229.00</h3>
+                            <p>Premium plan with unlimited builds and active users with publishing service.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Purchase Now</span></a>
+                            <ul>
+                                <li>1 Android Application</li>
+                                <li>One Time Payment</li>
+                                <li>Unlimited App Rebuilds</li>
+                                <li>Unlimited App Users</li>
+                                <li>No Appilix Branding</li>
+                                <li>All Integration Modules</li>
+                                <li>Priority Support</li>
+                                <li>12 Testers Service</li>
+                                <li>App Publishing Service</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--                    iOS Pricing Cards-->
+                    <div class=" categories ios_plans" >
+                        <div class="plan_card free_plan">
+                            <div class="plan_title">
+                                <h4>Free</h4>
+                            </div>
+                            <h3>$0.00</h3>
+                            <p>Let’s build your first iOS app for free and explore core features for 15 days.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Start Free Trial</span></a>
+                            <ul>
+                                <li>1 iOS Application</li>
+                                <li>15-day Trial</li>
+                                <li>Limited App Rebuilds</li>
+                                <li>Limited App Users</li>
+                            </ul>
+                        </div>
+                        <div class="plan_card standard_plan">
+                            <div class="plan_title">
+                                <h4>Standard</h4>
+                                <div class="badge">Most Popular</div>
+                            </div>
+                            <h3>$149.00</h3>
+                            <p>Standard plan with unlimited builds and active users.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Purchase Now</span></a>
+                            <ul>
+                                <li>1 iOS Application</li>
+                                <li>One Time Payment</li>
+                                <li>Unlimited App Rebuilds</li>
+                                <li>Unlimited App Users</li>
+                                <li>No Appilix Branding</li>
+                                <li>All Integration Modules</li>
+                                <li>App Store Publishable</li>
+                                <li>Email Support</li>
+                            </ul>
+                        </div>
+                        <div class="plan_card premium_plan">
+                            <div class="plan_title">
+                                <h4>Premium</h4>
+                            </div>
+                            <h3>$269.00</h3>
+                            <p>Premium plan with unlimited builds and active users with publishing service.</p>
+                            <a href="https://appilix.com/dashboard" class="button"><span>Purchase Now</span></a>
+                            <ul>
+                                <li>1 iOS Application</li>
+                                <li>One Time Payment</li>
+                                <li>Unlimited App Rebuilds</li>
+                                <li>Unlimited App Users</li>
+                                <li>No Appilix Branding</li>
+                                <li>All Integration Modules</li>
+                                <li>Priority Support</li>
+                                <li>App Publishing Service</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section_footer"></div>
+        </div>
+    </div>
+</section>
+
+
+<!--Appilix Combo Pac Section-->
+<section class="appilix_combo_pac">
+    <div class="wrapper">
+        <div class="appilix_container">
+            <div class="section_header">
+                <span class="section_badge">Combo & Custom Packs</span>
+                <h2 class="section_title">Save More With Combo and Custom Plans</h2>
+                <p class="short_description">Perfect for resellers, agencies, or anyone building multiple apps.</p>
+            </div>
+            <div class="section_body">
+                <div class="card combo_card">
+                    <div class="pack_price">
+                        <div>
+                            <h4>Standard Combo Pack</h4>
+                            <h3>$229.00 - <span>Save $39.00</span></h3>
+                            <p>1 Android & 1 iOS Application with Standard Subscription Plan Offerings </p>
+                        </div>
+                        <a href="https://appilix.com/dashboard" class="button">Get Combo Pack</a>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="pack_price">
+                        <div>
+                            <h4>Premium Combo Pack</h4>
+                            <h3>$439.00 - <span>Save $59.00</span></h3>
+                            <p>1 Android & 1 iOS Application with Premium Subscription Plan Offerings </p>
+                        </div>
+                        <a href="https://appilix.com/dashboard" class="button">Get Combo Pack</a>
+                    </div>
+                </div>
+                <div class="card enterprise_card">
+                    <div class="pack_price">
+                        <h4>Enterprise</h4>
+                        <h3><span>Contact for Price</span></h3>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="pack_details">
+                        <ul>
+                            <li>Web Feature Development</li>
+                            <li>App Feature Development</li>
+                            <li>Push Notification Automation</li>
+                            <li>Third-party SDK Integration</li>
+                            <li>and others</li>
+                        </ul>
+                        <a href="https://appilix.com/contact-us" class="button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Appilix CTA Section 2-->
+<section class="appilix_cta_preview">
+    <div class="appilix_container">
+        <div class="wrapper">
+            <h2 class="section_title">Compatible with All Website Platforms</h2>
+            <p class="short_description">Whether it’s WordPress, Wix, Shopify, or SaaS—Appilix transforms your site into a fully functional mobile app.</p>
+            <div class="cta_buttons">
+                <input id="home_page_appilix_cta_preview_2" type="text" placeholder="Turn website into an app" />
+                <button onclick="analyzeWebsite(`home_page_appilix_cta_preview_2`, `loading`, `Please wait`, this)">Try the preview</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Appilix Trusted By Companies Section-->
+<section class="appilix_trusted_by gray">
+    <div class="appilix_container">
+        <div class="section_content">
+            <h2 class="section_title">Built on <b>anything.</b> Works with Appilix.</h2>
+            <div class="company_logo_container">
+                <div class="logo_slider">
+                    <img src="https://appilix.com/styles/images/theme/brands/shopify.svg" alt="Shopify Logo">
+<img src="https://appilix.com/styles/images/theme/brands/wordpress.svg" alt="WordPress Logo">
+<img src="https://appilix.com/styles/images/theme/brands/webflow.svg" alt="Webflow Logo">
+<img src="https://appilix.com/styles/images/theme/brands/bubble.svg" alt="bubble Logo">
+<img src="https://appilix.com/styles/images/theme/brands/react.svg" alt="React Logo">
+<img src="https://appilix.com/styles/images/theme/brands/lovable.svg" alt="Lovable Logo">
+<img src="https://appilix.com/styles/images/theme/brands/wix.svg" alt="Wix Logo">
+<img src="https://appilix.com/styles/images/theme/brands/vuejs.svg" alt="Vue.js Logo">
+<img src="https://appilix.com/styles/images/theme/brands/framer.svg" alt="Framer Logo">                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Appilix FAQ Section -->
+<section class="appilix_faq">
+    <div class="appilix_container">
+        <div class="sec_wrapper">
+            <h2 class="sec_header">Got Questions? We’ve Got Answers</h2>
+
+            <div class="sec_body">
+                <div class="qna active">
+                    <h3>How do I turn a website into an app?</h3>
+                    <p>Simply enter your website URL, customize your app with your logo, splash screen, and colors, then hit build. No coding or technical skills required. You can test it on a real device before publishing to Google Play or the App Store.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Can I convert my website to app for free?</h3>
+                    <p>Yes, Appilix offers a 15-day free trial where you can access core features and test the platform. After the trial ends, the app will still open but prompt users to upgrade.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Can I convert my WordPress website into an app?</h3>
+                    <p>Absolutely. Appilix works with any website regardless of how it was built — WordPress, Shopify, Wix, or any custom platform. If your site has a URL, Appilix can turn it into a mobile app.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Can I convert my website to an iOS app?</h3>
+                    <p>Yes, and you don't need a Mac or Apple device to do it. Appilix builds the iOS app on its own servers and uploads it directly to App Store Connect on your behalf.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Will my app stay up to date with my site?</h3>
+                    <p>Yes, always. Since Appilix loads your website inside the app, any update you make to your website — content, design, or features — is instantly reflected in the app with zero extra work.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Is this just a wrapper?</h3>
+                    <p>Appilix does more than wrap your website. On top of displaying your site in a mobile app, it adds powerful native features like push notifications, bottom navigation, navigation drawer, AdMob ads, biometric authentication, and more. You can even control which parts of your website appear in the app using custom CSS and JavaScript.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>What is Web to APK?</h3>
+                    <p>Web to APK is the process of converting a website into an Android app package (.APK) — the file format used to install apps on Android devices. Instead of building an app from scratch, tools like Appilix take your existing website URL and package it into a fully installable Android app, ready for the Play Store or direct distribution.</p>
+                </div>
+
+                <div class="qna">
+                    <h3>Do I need a developer account to publish my app on Google Play or App Store?</h3>
+                    <p>Yes, you must have your own active developer account to publish your app — a Google Play Developer account for Android and an Apple Developer account for iOS. Appilix builds the app for you, but the publishing happens under your own account so you retain full ownership.</p>
+                </div>
+            </div>
+
+            <div class="sec_footer">
+                <div class="logo"></div>
+                <p>Still Unsure? Launch your first app in minutes, no cost to start.</p>
+                <a href="https://appilix.com/dashboard" class="btn">Create Your App Free</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="appilix_footer">
+    <div class="appilix_container">
+        <div class="footer_links">
+            <div class="footer_menu active">
+                <h3>About <span></span></h3>
+                <ul>
+                    <li><a href="https://appilix.com/about-us">About us</a></li>
+                    <li><a href="https://appilix.com/affiliates">Affiliates</a></li>
+                    <li><a href="https://appilix.com/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://appilix.com/refund-policy">Refund policy</a></li>
+                    <li><a href="https://appilix.com/terms-conditions">Terms and conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer_menu ">
+                <h3>Discover <span></span></h3>
+                <ul>
+                    <li><a href="https://appilix.com/faq">FAQs</a></li>
+                    <li><a href="https://appilix.com/features">Features</a></li>
+                    <li><a href="https://appilix.com/pricing">Plans and pricing</a></li>
+                    <li><a href="https://appilix.com/changelogs">Changelogs</a></li>
+                </ul>
+            </div>
+            <div class="footer_menu ">
+                <h3>Resources <span></span></h3>
+                <ul>
+                    <li><a href="https://appilix.com/docs">Documentation</a></li>
+                    <li><a href="https://appilix.com/articles">Articles</a></li>
+                    <li><a href="https://appilix.com/examples">Example apps</a></li>
+                    <li><a href="https://appilix.com/tools">Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer_menu ">
+                <h3>Connect with us <span></span></h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/appilix/">Facebook</a> </li>
+                    <li><a href="https://www.linkedin.com/company/appilix">LinkedIn</a></li>
+                    <li><a href="https://x.com/appilix">X (Twitter)</a></li>
+                    <li><a href="https://www.youtube.com/@appilix">YouTube </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy_right">
+            <span>© 2026 Appilix. All Rights Reserved</span>
+            <div class="policy_links">
+                <a href="https://appilix.com/privacy-policy">Privacy Policy</a>
+                <a href="https://appilix.com/terms-conditions">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer_logo"></div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://appilix.com/styles/scripts/theme.js?v=1.0.0"></script>
+<script type="text/javascript" src="https://appilix.com/styles/scripts/animate.js?v=1.0.0"></script>
+
+<!-- Zoho SalesIQ -->
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+<script id="zsiqscript" src="https://salesiq.zoho.com/widget?wc=siqa985b02ac27853ec718addab643173065661e3a30f13c3146bfa65a96c6707d4&version=2.0" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a48340e92cc7c5f8',t:'MTc5MTYxMDQ0MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"2f2784d165a84f10bf8b56f928e28578","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
+
+
