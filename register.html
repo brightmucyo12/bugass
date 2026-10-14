@@ -268,7 +268,8 @@
   <h1 class="register-title">Register</h1>
 
   <div class="register-container">
-    <form action="#" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+    <!-- Updated action and method to point directly to dashboard.html -->
+    <form id="registerForm" action="dashboard.html" method="GET" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
       <div class="register-card">
         
         <div class="form-group">
@@ -329,6 +330,23 @@
 
     <a href="login.html" class="login-link">Login if you have an account</a>
   </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const pin = document.getElementById('pin').value;
+      const rePin = document.getElementById('re-pin').value;
+
+      if (pin !== rePin) {
+        alert('PINs do not match. Please check again.');
+        return;
+      }
+
+      // Smoothly navigate directly to your dashboard
+      window.location.href = 'dashboard.html';
+    });
+  </script>
 
 </body>
 </html>
