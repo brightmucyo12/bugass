@@ -17,7 +17,6 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* CLEAR SEMI-TRANSPARENT BLUE PAGE BACKGROUND */
     body {
       background: linear-gradient(135deg, rgba(220, 233, 250, 0.9) 0%, rgba(195, 218, 245, 0.85) 100%);
       min-height: 100vh;
@@ -63,7 +62,6 @@
       align-items: center;
     }
 
-    /* Standard Light Gray Card */
     .register-card {
       background-color: #F3F4F6;
       width: 100%;
@@ -268,8 +266,8 @@
   <h1 class="register-title">Register</h1>
 
   <div class="register-container">
-    <!-- Updated action and method to point directly to dashboard.html -->
-    <form id="registerForm" action="dashboard.html" method="GET" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+    <!-- NO action or method attributes here to prevent server errors -->
+    <form id="registerForm" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
       <div class="register-card">
         
         <div class="form-group">
@@ -343,7 +341,6 @@
         return;
       }
 
-      // Smoothly navigate directly to your dashboard
       window.location.href = 'dashboard.html';
     });
   </script>
